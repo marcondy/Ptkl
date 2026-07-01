@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+
+  --color-hyperia-teal: #2dd4bf;
+  --color-hyperia-teal-dim: #14b8a6;
+  --color-hyperia-purple: #5d5cde;
+  --color-hyperia-purple-dim: #4f46e5;
+  --color-hyperia-bg: #0a0a0a;
+  --color-hyperia-surface: #141414;
+  --color-hyperia-card: #1a1a1a;
+  --color-hyperia-border: #262626;
+  --color-hyperia-muted: #a3a3a3;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-hyperia-bg);
+  color: #fafafa;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-hyperia-teal) 30%, transparent);
+  color: #fff;
+}
