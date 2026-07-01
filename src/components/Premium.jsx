@@ -1,42 +1,39 @@
 import { MotionItem } from './MotionSection'
 
 const premiumFeatures = [
-  'Unlimited active stacks',
+  'Unlimited active plans',
   'ASCII & Markdown export',
   'Inventory forecasting',
-  'Catalog sync from JSON',
-  'Cloud backup & restore',
-  'Priority notifications',
+  'Local catalog import',
+  'Encrypted local backup',
+  'On-device reminders',
 ]
 
 export default function Premium() {
   return (
-    <section id="premium" className="py-24 lg:py-32">
+    <section id="premium" className="py-16 lg:py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <MotionItem>
-          <div className="relative overflow-hidden rounded-3xl border border-hyperia-teal/20 bg-gradient-to-br from-hyperia-card to-neutral-950 p-8 sm:p-12 lg:p-16">
-            {/* Glow */}
-            <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-hyperia-teal/10 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-hyperia-teal/15 bg-gradient-to-br from-hyperia-card via-hyperia-surface to-hyperia-bg p-8 lg:p-12">
+            <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-hyperia-teal/10 blur-3xl" />
 
-            <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
               <div>
-                <span className="inline-flex rounded-md border border-hyperia-teal/30 bg-hyperia-teal/10 px-2.5 py-1 text-[10px] font-bold tracking-[0.15em] text-hyperia-teal">
+                <span className="inline-flex rounded-md border border-hyperia-teal/30 bg-hyperia-teal/10 px-2 py-1 text-xs font-bold tracking-[0.15em] text-hyperia-teal">
                   HYPERIA+
                 </span>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Built for serious protocol management
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">
+                  Premium tools. Still private.
                 </h2>
-                <p className="mt-4 text-neutral-400 leading-relaxed">
-                  Unlock the full power of Hyperia with premium tools designed
-                  for power users who demand precision, portability, and
-                  reliability across every cycle.
+                <p className="mt-4 text-base leading-relaxed text-neutral-400">
+                  Advanced forecasting, unlimited plans, and encrypted local backups —
+                  without trading your privacy for convenience.
                 </p>
                 <a
                   href="https://gethyperia.com"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-hyperia-teal px-8 py-3.5 text-sm font-semibold text-black transition-all hover:bg-hyperia-teal/90 hover:shadow-[0_0_32px_rgba(45,212,191,0.35)]"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-hyperia-teal px-8 py-3 text-sm font-semibold text-black transition-all hover:shadow-[0_0_32px_rgba(45,212,191,0.3)]"
                 >
-                  Upgrade to Premium
-                  <span>→</span>
+                  Upgrade to Hyperia+
                 </a>
               </div>
 
@@ -44,9 +41,9 @@ export default function Premium() {
                 {premiumFeatures.map((feature) => (
                   <div
                     key={feature}
-                    className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 backdrop-blur-sm"
+                    className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3"
                   >
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-hyperia-teal/20 text-[10px] text-hyperia-teal">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-hyperia-teal/15 text-xs text-hyperia-teal">
                       ✓
                     </span>
                     <span className="text-sm text-neutral-300">{feature}</span>

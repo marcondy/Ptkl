@@ -6,15 +6,18 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
-  --color-hyperia-teal: #2dd4bf;
-  --color-hyperia-teal-dim: #14b8a6;
-  --color-hyperia-purple: #5d5cde;
-  --color-hyperia-purple-dim: #4f46e5;
+  /* 60% — neutral backgrounds */
   --color-hyperia-bg: #0a0a0a;
   --color-hyperia-surface: #141414;
   --color-hyperia-card: #1a1a1a;
   --color-hyperia-border: #262626;
   --color-hyperia-muted: #a3a3a3;
+
+  /* 10% — accent (teal dark / purple light) */
+  --color-hyperia-teal: #2dd4bf;
+  --color-hyperia-teal-dim: #14b8a6;
+  --color-hyperia-purple: #5d5cde;
+  --color-hyperia-purple-dim: #4f46e5;
 }
 
 * {
