@@ -62,7 +62,7 @@ In `vite.config.js`, set `base` to your repository name:
 
 ```js
 export default defineConfig({
-  base: '/ptkl/', // Change to '/' if using a custom domain
+  base: '/Ptkl/', // Change to '/' if using a custom domain
 })
 ```
 
