@@ -1,33 +1,27 @@
-import AppShowcase from './components/AppShowcase'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import ProblemSolution from './components/ProblemSolution'
-import ShareSpotlight from './components/ShareSpotlight'
-import PrivacySection from './components/PrivacySection'
-import FeatureGrid from './components/FeatureGrid'
-import HowItWorks from './components/HowItWorks'
-import Pricing from './components/Pricing'
-import Testimonials from './components/Testimonials'
-import FAQ from './components/FAQ'
-import Waitlist from './components/Waitlist'
+import PrivacyPillar from './components/PrivacyPillar'
+import TimelineFeature from './components/TimelineFeature'
+import LibraryFeature from './components/LibraryFeature'
+import RemindersFeature from './components/RemindersFeature'
+import BackupFeature from './components/BackupFeature'
+import HyperiaPro from './components/HyperiaPro'
+import Disclaimer from './components/Disclaimer'
 import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-hyperia-bg text-hyperia-text antialiased">
+    <div className="min-h-screen w-full overflow-x-hidden bg-black text-white antialiased">
       <Navbar />
       <main className="w-full min-w-0 overflow-x-hidden">
         <Hero />
-        <AppShowcase />
-        <ProblemSolution />
-        <ShareSpotlight />
-        <PrivacySection />
-        <FeatureGrid />
-        <HowItWorks />
-        <Pricing />
-        <Testimonials />
-        <FAQ />
-        <Waitlist />
+        <PrivacyPillar />
+        <TimelineFeature />
+        <LibraryFeature />
+        <RemindersFeature />
+        <BackupFeature />
+        <HyperiaPro />
+        <Disclaimer />
       </main>
       <Footer />
     </div>
