@@ -1,31 +1,31 @@
 const themes = {
   light: {
-    shell: 'bg-[#f9fafb]',
-    card: 'bg-white border-neutral-200/80 shadow-sm',
+    shell: 'bg-[#f9f9fb]',
+    card: 'bg-white border-neutral-200/80',
     text: 'text-neutral-900',
     muted: 'text-neutral-500',
-    accent: 'text-hyperia-magenta',
-    accentBg: 'bg-hyperia-magenta',
-    accentSoft: 'bg-hyperia-magenta/10 text-hyperia-magenta border-hyperia-magenta/20',
+    accent: 'text-[#4f46e5]',
+    accentBg: 'bg-[#4f46e5]',
+    accentSoft: 'bg-[#4f46e5]/10 text-[#4f46e5] border-[#4f46e5]/25',
     tabTrack: 'bg-neutral-100',
     tabActive: 'bg-white text-neutral-900 shadow-sm',
     tabInactive: 'text-neutral-500',
     border: 'border-neutral-200',
-    dot: 'bg-hyperia-magenta',
+    progress: 'bg-[#4f46e5]',
   },
   dark: {
-    shell: 'bg-[#0a0a0f]',
-    card: 'bg-[#16161f] border-hyperia-border',
-    text: 'text-hyperia-text',
-    muted: 'text-hyperia-muted',
-    accent: 'text-hyperia-cyan',
-    accentBg: 'bg-hyperia-cyan',
-    accentSoft: 'bg-hyperia-cyan/10 text-hyperia-cyan border-hyperia-cyan/30',
-    tabTrack: 'bg-hyperia-card',
-    tabActive: 'bg-hyperia-surface text-hyperia-text shadow-sm',
-    tabInactive: 'text-hyperia-muted',
-    border: 'border-hyperia-border',
-    dot: 'bg-hyperia-cyan',
+    shell: 'bg-black',
+    card: 'bg-[#0f0f0f] border-white/10',
+    text: 'text-white',
+    muted: 'text-zinc-500',
+    accent: 'text-[#00ffcc]',
+    accentBg: 'bg-[#00ffcc]',
+    accentSoft: 'bg-[#00ffcc]/10 text-[#00ffcc] border-[#00ffcc]/25',
+    tabTrack: 'bg-[#18181b]',
+    tabActive: 'bg-[#121212] text-white shadow-sm border border-white/5',
+    tabInactive: 'text-zinc-500',
+    border: 'border-white/10',
+    progress: 'bg-[#00ffcc]',
   },
 }
 
@@ -43,16 +43,12 @@ export default function AppChrome({ theme = 'dark', compact = false }) {
           HYPERIA
         </span>
         <div className="flex items-center gap-1.5">
-          <span
-            className={`rounded border px-1 py-px font-mono text-[6px] font-semibold tracking-wider ${t.accentSoft}`}
-          >
-            PRO
+          <span className={`rounded border px-1 py-px font-mono text-[6px] font-semibold tracking-wider ${t.accentSoft}`}>
+            PREMIUM
           </span>
           <span className={`text-[9px] ${t.muted}`}>🔔</span>
           {!compact && (
-            <span className={`font-mono text-[7px] font-medium tracking-widest ${t.muted}`}>
-              LIBRARY
-            </span>
+            <span className={`font-mono text-[7px] font-medium tracking-widest ${t.muted}`}>LIBRARY</span>
           )}
         </div>
       </div>

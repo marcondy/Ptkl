@@ -1,59 +1,25 @@
 import AppChrome, { useTheme } from '../ui/AppChrome'
 
-function TimelineRow({ name, dose, color, glow, t, theme }) {
+function ItemRow({ name, dose, borderColor, t }) {
   return (
-    <div className="relative flex gap-2 pl-0.5">
-      <div className="flex flex-col items-center">
-        <div
-          className={`h-2 w-2 rounded-full ${color} ${
-            glow ? 'shadow-[0_0_6px_rgba(0,255,255,0.5)]' : ''
-          }`}
-        />
-        <div className={`w-px flex-1 ${theme === 'light' ? 'bg-neutral-200' : 'bg-hyperia-border'}`} />
-      </div>
-      <div className={`mb-2 flex-1 rounded-lg border px-2.5 py-2 ${t.card}`}>
-        <div className="flex items-center justify-between">
-          <div>
-            <p className={`font-mono text-[9px] font-semibold ${t.text}`}>{name}</p>
-            <p className={`text-[8px] ${t.muted}`}>{dose}</p>
-          </div>
-          <div className={`flex gap-1.5 font-mono text-[8px] ${t.muted}`}>
-            <span>⋮</span>
-            <span>⌄</span>
-          </div>
-        </div>
-      </div>
+    <div className={`mb-2 rounded-xl border-l-2 ${borderColor} border border-white/10 bg-[#121212] px-2.5 py-2 ${t.card}`}>
+      <p className={`font-mono text-[9px] font-semibold ${t.text}`}>{name}</p>
+      <p className={`text-[8px] ${t.muted}`}>{dose}</p>
     </div>
   )
 }
 
 export default function TimelineScreen({ theme = 'dark' }) {
-  const t = { ...useTheme(theme), theme }
-  const progressColor = theme === 'light' ? 'bg-hyperia-magenta' : 'bg-hyperia-cyan'
-  const progressGlow =
-    theme === 'light'
-      ? 'shadow-[0_0_10px_rgba(224,64,251,0.4)]'
-      : 'shadow-[0_0_10px_rgba(0,255,255,0.4)]'
-
-  const items = [
-    { name: 'Foundation block', dose: 'Wks 1–4 · Daily', color: theme === 'light' ? 'bg-hyperia-magenta' : 'bg-hyperia-cyan', glow: true },
-    { name: 'Maintenance window', dose: 'Wks 5–10 · 5×/wk', color: 'bg-hyperia-green', glow: true },
-    { name: 'Taper phase', dose: 'Wks 11–12 · Every 5d', color: 'bg-blue-400', glow: false },
-  ]
+  const t = useTheme(theme)
 
   return (
-    <div className={`${t.shell} pb-3`}>
+    <div className={`${t.shell} relative pb-4`}>
       <AppChrome theme={theme} />
 
-      <div className={`m-3 rounded-xl border p-3 ${t.card}`}>
+      <div className={`m-3 rounded-2xl border p-3 ${t.card}`}>
         <div className="mb-2 flex items-center justify-between">
-          <p className={`font-mono text-[10px] font-bold tracking-wide ${t.text}`}>
-            PROTOCOL PLAN
-          </p>
-          <div className={`flex gap-1.5 font-mono text-[8px] ${t.muted}`}>
-            <span>⋮</span>
-            <span>⌃</span>
-          </div>
+          <p className={`font-mono text-[10px] font-bold tracking-wide ${t.text}`}>PROTOCOL PLAN</p>
+          <span className={`text-[8px] ${t.muted}`}>⌃</span>
         </div>
 
         <div className="mb-3 grid grid-cols-3 gap-2">
@@ -64,28 +30,27 @@ export default function TimelineScreen({ theme = 'dark' }) {
           ].map((item) => (
             <div key={item.label}>
               <p className={`font-mono text-[6px] tracking-wider ${t.muted}`}>{item.label}</p>
-              <p className={`font-mono text-[8px] font-medium ${t.text}`}>{item.value}</p>
+              <p className={`font-mono text-[8px] ${t.text}`}>{item.value}</p>
             </div>
           ))}
         </div>
 
         <p className={`mb-1 font-mono text-[6px] tracking-wider ${t.muted}`}>TIMELINE PROGRESS</p>
-        <div className={`mb-1 h-1.5 overflow-hidden rounded-full ${theme === 'light' ? 'bg-neutral-100' : 'bg-hyperia-card'}`}>
-          <div className={`h-full w-[75%] rounded-full ${progressColor} ${progressGlow}`} />
+        <div className="mb-1 h-1.5 overflow-hidden rounded-full bg-[#18181b]">
+          <div className={`h-full w-[75%] rounded-full ${t.progress} shadow-[0_0_8px_rgba(0,255,204,0.4)]`} />
         </div>
         <p className={`text-right font-mono text-[7px] ${t.accent}`}>Week 09/12</p>
       </div>
 
       <div className="px-3">
-        <div className="mb-1.5 flex items-center justify-between">
-          <p className={`font-mono text-[7px] font-semibold tracking-wider ${t.muted}`}>PLAN TIMELINE</p>
-          <span className={`rounded border px-1 py-px font-mono text-[6px] ${t.muted} ${t.border}`}>
-            + ADD
-          </span>
-        </div>
-        {items.map((item) => (
-          <TimelineRow key={item.name} {...item} t={t} theme={theme} />
-        ))}
+        <p className={`mb-2 font-mono text-[7px] font-semibold tracking-wider ${t.muted}`}>PLAN TIMELINE</p>
+        <ItemRow name="Item A" dose="1.75 mg · Wks 1–12" borderColor="border-l-[#00ffcc]" t={t} />
+        <ItemRow name="Item B" dose="5 mcg · Daily" borderColor="border-l-[#e040fb]" t={t} />
+        <ItemRow name="Item C" dose="2 mg · 5×/wk" borderColor="border-l-[#39ff14]" t={t} />
+      </div>
+
+      <div className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[#00ffcc] text-lg text-black shadow-[0_0_16px_rgba(0,255,204,0.4)]">
+        +
       </div>
     </div>
   )

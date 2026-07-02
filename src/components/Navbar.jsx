@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import PageContainer from './ui/PageContainer'
 
 const links = [
-  { label: 'Share', href: '#share' },
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Privacy', href: '#privacy' },
+  { label: 'Timeline', href: '#timeline' },
+  { label: 'Library', href: '#library' },
+  { label: 'Pro', href: '#pro' },
 ]
 
 export default function Navbar() {
@@ -19,31 +19,23 @@ export default function Navbar() {
   }, [])
 
   return (
-    <motion.header
-      initial={{ y: -12, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4 }}
+    <header
       className={`fixed inset-x-0 top-0 z-50 w-full transition-all ${
-        scrolled
-          ? 'border-b border-hyperia-border/60 bg-hyperia-bg/90 backdrop-blur-xl'
-          : 'bg-transparent'
+        scrolled ? 'border-b border-white/10 bg-black/90 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
       <PageContainer>
         <nav className="flex min-w-0 items-center justify-between gap-3 py-4">
-          <a
-            href="#"
-            className="shrink-0 font-mono text-xs font-semibold tracking-[0.14em] text-hyperia-cyan sm:text-sm sm:tracking-[0.18em]"
-          >
+          <a href="#" className="font-mono text-xs font-bold tracking-[0.2em] text-[#00ffcc] sm:text-sm">
             HYPERIA
           </a>
 
-          <div className="hidden min-w-0 items-center gap-6 md:flex lg:gap-8">
+          <div className="hidden items-center gap-6 md:flex">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-mono text-xs tracking-widest text-hyperia-muted transition-colors hover:text-hyperia-text"
+                className="font-mono text-[10px] tracking-widest text-zinc-500 transition-colors hover:text-white"
               >
                 {link.label.toUpperCase()}
               </a>
@@ -51,16 +43,15 @@ export default function Navbar() {
           </div>
 
           <motion.a
-            href="#waitlist"
+            href="#download"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="shrink-0 rounded-lg border border-hyperia-cyan/40 bg-hyperia-cyan/10 px-3 py-2 font-mono text-[10px] font-medium text-hyperia-cyan sm:px-4 sm:text-xs"
+            className="shrink-0 rounded-lg border border-[#00ffcc]/40 bg-[#00ffcc]/10 px-3 py-2 font-mono text-[10px] font-medium text-[#00ffcc] sm:px-4 sm:text-xs"
           >
-            <span className="sm:hidden">GET APP</span>
-            <span className="hidden sm:inline">GET THE APP</span>
+            GET APP
           </motion.a>
         </nav>
       </PageContainer>
-    </motion.header>
+    </header>
   )
 }

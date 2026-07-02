@@ -1,75 +1,70 @@
 import { motion } from 'framer-motion'
-import PlayStoreBadge from './ui/PlayStoreBadge'
-import PhoneFrame from './ui/PhoneFrame'
 import PageContainer from './ui/PageContainer'
+import AppScreen from './ui/AppScreen'
 import TimelineScreen from './screenshots/TimelineScreen'
+import PlansListScreen from './screenshots/PlansListScreen'
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24">
-      <div className="pointer-events-none absolute inset-0 grid-bg" />
-      <div className="pointer-events-none absolute top-0 left-1/2 h-[400px] w-[min(700px,100vw)] -translate-x-1/2 rounded-full bg-hyperia-cyan/[0.04] blur-3xl sm:h-[500px]" />
-      <div className="pointer-events-none absolute top-40 -right-8 h-[240px] w-[240px] rounded-full bg-hyperia-magenta/[0.04] blur-3xl sm:right-0 sm:h-[300px] sm:w-[300px]" />
+      <div className="pointer-events-none absolute inset-0 grid-subtle" />
+      <div className="pointer-events-none absolute top-1/4 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-[#00ffcc]/[0.03] blur-3xl" />
 
       <PageContainer className="relative">
-        <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid min-w-0 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5 }}
             className="min-w-0 text-center lg:text-left"
           >
-            <div className="flex justify-center lg:justify-start">
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-hyperia-green/30 bg-hyperia-green/5 px-4 py-2 font-mono text-[10px] text-hyperia-green sm:text-xs">
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-hyperia-green shadow-[0_0_8px_#39FF14]" />
-                OFFLINE BY DEFAULT
-              </p>
-            </div>
+            <p className="font-mono text-xs font-bold tracking-[0.25em] text-[#00ffcc]">HYPERIA</p>
 
-            <h1 className="text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-hyperia-text sm:text-4xl lg:text-5xl xl:text-[3.25rem]">
-              Build your plan once.
-              <br />
-              <span className="bg-gradient-to-r from-hyperia-cyan to-hyperia-magenta bg-clip-text text-transparent">
-                Share it in one tap.
-              </span>
+            <h1 className="mt-4 text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Become a sovereign individual.
             </h1>
 
-            <p className="mx-auto mt-6 max-w-lg text-sm leading-relaxed text-hyperia-muted sm:text-base lg:mx-0">
-              Hyperia is the offline protocol journal for people who plan in phases—and
-              post in forums without rebuilding everything in a spreadsheet.
+            <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-zinc-400 sm:text-base lg:mx-0">
+              Private, offline-first plan journal. Log protocols and timelines on your device —
+              optional CSV backup and share when you choose.
             </p>
 
-            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
-              <PlayStoreBadge href="#waitlist" className="w-full justify-center sm:w-auto" />
+            <div id="download" className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <motion.a
-                href="#share"
+                href="#pro"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex w-full items-center justify-center rounded-xl border border-hyperia-border px-6 py-3 text-sm font-medium text-hyperia-text transition-colors hover:border-hyperia-magenta/40 hover:text-hyperia-magenta sm:w-auto"
+                className="inline-flex items-center justify-center rounded-xl bg-[#00ffcc] px-8 py-3.5 font-mono text-xs font-semibold tracking-wide text-black glow-neon"
               >
-                See how sharing works →
+                GET ON GOOGLE PLAY
               </motion.a>
+              <a
+                href="#timeline"
+                className="inline-flex items-center justify-center rounded-xl border border-white/10 px-8 py-3.5 font-mono text-xs text-zinc-300 transition-colors hover:border-[#00ffcc]/30 hover:text-[#00ffcc]"
+              >
+                EXPLORE FEATURES →
+              </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 font-mono text-[11px] text-hyperia-muted sm:gap-x-6 sm:text-xs lg:justify-start">
-              {['No account', '100% local', 'Forum-ready exports', 'Android'].map((t) => (
-                <span key={t} className="flex items-center gap-2">
-                  <span className="text-hyperia-cyan">▸</span>
-                  {t}
-                </span>
-              ))}
-            </div>
+            <p className="mt-6 font-mono text-[10px] tracking-wider text-zinc-600">
+              NOT MEDICAL ADVICE · LOCAL BY DEFAULT · NO ACCOUNT
+            </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.15 }}
-            className="flex min-w-0 justify-center lg:justify-end"
+            transition={{ duration: 0.6, delay: 0.12 }}
+            className="relative flex min-w-0 justify-center lg:justify-end"
           >
-            <PhoneFrame theme="dark" size="lg" className="glow-cyan">
+            <AppScreen theme="dark" size="xl" className="glow-neon">
               <TimelineScreen theme="dark" />
-            </PhoneFrame>
+            </AppScreen>
+            <div className="absolute -bottom-2 -left-2 hidden sm:block lg:-left-6">
+              <AppScreen theme="dark" size="sm" interactive={false}>
+                <PlansListScreen theme="dark" />
+              </AppScreen>
+            </div>
           </motion.div>
         </div>
       </PageContainer>
