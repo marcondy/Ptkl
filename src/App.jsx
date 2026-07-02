@@ -1,21 +1,31 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import ScreenshotShowcase from './components/ScreenshotShowcase'
-import Features from './components/Features'
+import ProblemSolution from './components/ProblemSolution'
+import ShareSpotlight from './components/ShareSpotlight'
 import PrivacySection from './components/PrivacySection'
-import Premium from './components/Premium'
+import FeatureGrid from './components/FeatureGrid'
+import HowItWorks from './components/HowItWorks'
+import Pricing from './components/Pricing'
+import Testimonials from './components/Testimonials'
+import FAQ from './components/FAQ'
+import Waitlist from './components/Waitlist'
 import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-hyperia-bg text-white antialiased">
+    <div className="min-h-screen bg-hyperia-bg text-hyperia-text antialiased">
       <Navbar />
       <main>
         <Hero />
-        <ScreenshotShowcase />
-        <Features />
+        <ProblemSolution />
+        <ShareSpotlight />
         <PrivacySection />
-        <Premium />
+        <FeatureGrid />
+        <HowItWorks />
+        <Pricing />
+        <Testimonials />
+        <FAQ />
+        <Waitlist />
       </main>
       <Footer />
     </div>
