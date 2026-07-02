@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import PlayStoreBadge from './ui/PlayStoreBadge'
-import PhoneFrame from './ui/PhoneFrame'
+import AppScreenshot from './ui/AppScreenshot'
 import PageContainer from './ui/PageContainer'
-import TimelineScreen from './screenshots/TimelineScreen'
+import { screenshots } from '../data/screenshots'
 
 export default function Hero() {
+  const shot = screenshots.timelineDark
+
   return (
     <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24">
       <div className="pointer-events-none absolute inset-0 grid-bg" />
@@ -65,11 +67,25 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.15 }}
-            className="flex min-w-0 justify-center lg:justify-end"
+            className="relative flex min-w-0 justify-center lg:justify-end"
           >
-            <PhoneFrame theme="dark" size="lg" className="glow-cyan">
-              <TimelineScreen theme="dark" />
-            </PhoneFrame>
+            <AppScreenshot
+              src={shot.src}
+              alt={shot.alt}
+              theme={shot.theme}
+              size="xl"
+              position={shot.position}
+              priority
+              className="glow-cyan"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              className="absolute -bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full border border-hyperia-border bg-hyperia-bg/90 px-4 py-2 font-mono text-[10px] text-hyperia-muted backdrop-blur-md sm:text-xs"
+            >
+              Actual app screenshot
+            </motion.div>
           </motion.div>
         </div>
       </PageContainer>

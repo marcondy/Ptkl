@@ -1,3 +1,4 @@
+import AppShowcase from './components/AppShowcase'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProblemSolution from './components/ProblemSolution'
@@ -17,6 +18,7 @@ export default function App() {
       <Navbar />
       <main className="w-full min-w-0 overflow-x-hidden">
         <Hero />
+        <AppShowcase />
         <ProblemSolution />
         <ShareSpotlight />
         <PrivacySection />

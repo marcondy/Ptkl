@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
 import PageContainer from './ui/PageContainer'
+import AppScreenshot from './ui/AppScreenshot'
+import { screenshots } from '../data/screenshots'
 
 const namedExport = `| Item       | Weeks | Frequency    | Dose    |
 |------------|-------|--------------|---------|
@@ -40,7 +42,7 @@ export default function ShareSpotlight() {
           />
         </MotionItem>
 
-        <div className="mt-12 grid min-w-0 gap-8 lg:grid-cols-2">
+        <div className="mt-12 grid min-w-0 items-start gap-8 lg:grid-cols-2">
           <MotionItem delay={0.08} className="min-w-0 space-y-4">
             <div className="rounded-xl border border-hyperia-border bg-hyperia-card p-4 sm:p-6">
               <p className="font-mono text-xs tracking-wider text-hyperia-magenta">BEFORE</p>
@@ -62,18 +64,17 @@ export default function ShareSpotlight() {
                 Clean markdown table — formatted for Reddit, Discord, and communities.
               </p>
             </div>
-          </MotionItem>
 
-          <MotionItem delay={0.12} className="min-w-0">
-            <div className="overflow-hidden rounded-2xl border border-hyperia-border bg-hyperia-card">
-              <div className="flex flex-col gap-3 border-b border-hyperia-border px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
-                <p className="font-mono text-xs font-semibold tracking-widest text-hyperia-cyan">
+            {/* Text export demo */}
+            <div className="rounded-2xl border border-hyperia-border bg-hyperia-card p-4 sm:p-5">
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+                <p className="font-mono text-[10px] tracking-widest text-hyperia-cyan sm:text-xs">
                   EXPORT PREVIEW
                 </p>
                 <button
                   type="button"
                   onClick={() => setAnonymized(!anonymized)}
-                  className={`w-fit rounded-full border px-3 py-1 font-mono text-[10px] transition-colors ${
+                  className={`rounded-full border px-3 py-1 font-mono text-[10px] transition-colors ${
                     anonymized
                       ? 'border-hyperia-green/50 bg-hyperia-green/10 text-hyperia-green'
                       : 'border-hyperia-border text-hyperia-muted hover:text-hyperia-text'
@@ -82,30 +83,33 @@ export default function ShareSpotlight() {
                   {anonymized ? 'ANONYMIZER ON' : 'ANONYMIZER OFF'}
                 </button>
               </div>
+              <pre className="max-w-full overflow-x-auto rounded-lg border border-hyperia-border bg-hyperia-bg p-3 font-mono text-[9px] leading-relaxed whitespace-pre text-hyperia-muted sm:text-[10px]">
+                {anonymized ? anonExport : namedExport}
+              </pre>
+              <motion.button
+                type="button"
+                onClick={handleCopy}
+                whileTap={{ scale: 0.97 }}
+                className="mt-3 w-full rounded-lg bg-hyperia-cyan py-2.5 font-mono text-[10px] font-semibold tracking-wider text-black sm:text-xs"
+              >
+                {copied ? '✓ COPIED TO CLIPBOARD' : 'COPY TO CLIPBOARD'}
+              </motion.button>
+            </div>
+          </MotionItem>
 
-              <div className="min-w-0 p-4 sm:p-6">
-                <AnimatePresence mode="wait">
-                  <motion.pre
-                    key={anonymized ? 'anon' : 'named'}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.25 }}
-                    className="max-w-full overflow-x-auto rounded-lg border border-hyperia-border bg-hyperia-bg p-3 font-mono text-[9px] leading-relaxed whitespace-pre text-hyperia-muted sm:p-4 sm:text-[11px]"
-                  >
-                    {anonymized ? anonExport : namedExport}
-                  </motion.pre>
-                </AnimatePresence>
-
-                <motion.button
-                  type="button"
-                  onClick={handleCopy}
-                  whileTap={{ scale: 0.97 }}
-                  className="mt-4 w-full rounded-lg bg-hyperia-cyan py-3 font-mono text-[10px] font-semibold tracking-wider text-black sm:text-xs"
-                >
-                  {copied ? '✓ COPIED TO CLIPBOARD' : 'COPY TO CLIPBOARD'}
-                </motion.button>
-              </div>
+          <MotionItem delay={0.12} className="flex min-w-0 justify-center lg:justify-end">
+            <div className="w-full max-w-[min(320px,calc(100vw-2rem))]">
+              <p className="mb-4 text-center font-mono text-[10px] tracking-widest text-hyperia-muted sm:text-xs lg:text-right">
+                IN-APP SHARE SCREEN
+              </p>
+              <AppScreenshot
+                src={screenshots.shareDark.src}
+                alt={screenshots.shareDark.alt}
+                theme="dark"
+                size="xl"
+                position="top center"
+                className="glow-cyan"
+              />
             </div>
           </MotionItem>
         </div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import PageContainer from './ui/PageContainer'
 
 const links = [
+  { label: 'App', href: '#showcase' },
   { label: 'Share', href: '#share' },
   { label: 'Features', href: '#features' },
   { label: 'Pricing', href: '#pricing' },
