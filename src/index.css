@@ -6,18 +6,15 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
-  /* 60% — neutral backgrounds */
-  --color-hyperia-bg: #0a0a0a;
-  --color-hyperia-surface: #141414;
-  --color-hyperia-card: #1a1a1a;
-  --color-hyperia-border: #262626;
-  --color-hyperia-muted: #a3a3a3;
-
-  /* 10% — accent (teal dark / purple light) */
-  --color-hyperia-teal: #2dd4bf;
-  --color-hyperia-teal-dim: #14b8a6;
-  --color-hyperia-purple: #5d5cde;
-  --color-hyperia-purple-dim: #4f46e5;
+  --color-hyperia-bg: #0a0a0f;
+  --color-hyperia-surface: #121218;
+  --color-hyperia-card: #16161f;
+  --color-hyperia-border: #2a2a38;
+  --color-hyperia-muted: #8b8b9e;
+  --color-hyperia-cyan: #00ffff;
+  --color-hyperia-magenta: #e040fb;
+  --color-hyperia-green: #39ff14;
+  --color-hyperia-text: #f0f0f5;
 }
 
 * {
@@ -29,10 +26,25 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   background-color: var(--color-hyperia-bg);
-  color: #fafafa;
+  color: var(--color-hyperia-text);
 }
 
 ::selection {
-  background-color: color-mix(in srgb, var(--color-hyperia-teal) 30%, transparent);
+  background-color: color-mix(in srgb, var(--color-hyperia-cyan) 25%, transparent);
   color: #fff;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 32px rgba(0, 255, 255, 0.15);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 32px rgba(224, 64, 251, 0.12);
 }

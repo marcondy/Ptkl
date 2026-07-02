@@ -1,121 +1,72 @@
 import { motion } from 'framer-motion'
+import PlayStoreBadge from './ui/PlayStoreBadge'
 import PhoneFrame from './ui/PhoneFrame'
 import TimelineScreen from './screenshots/TimelineScreen'
-import ShareScreen from './screenshots/ShareScreen'
-
-const trustPoints = [
-  'Works offline',
-  'No account',
-  'Local storage',
-  'You choose to share',
-]
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-hyperia-teal/[0.07] blur-3xl" />
-        <div className="absolute top-32 -right-16 h-[320px] w-[320px] rounded-full bg-hyperia-purple/[0.06] blur-3xl" />
-        <div
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-        />
-      </div>
+      <div className="pointer-events-none absolute inset-0 grid-bg" />
+      <div className="pointer-events-none absolute top-0 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-hyperia-cyan/[0.04] blur-3xl" />
+      <div className="pointer-events-none absolute top-40 right-0 h-[300px] w-[300px] rounded-full bg-hyperia-magenta/[0.04] blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center lg:text-left"
           >
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-hyperia-teal/20 bg-hyperia-teal/5 px-4 py-2 text-xs font-medium text-hyperia-teal">
-              <span className="h-1.5 w-1.5 rounded-full bg-hyperia-teal" />
-              Private · Offline · On your device
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-hyperia-green/30 bg-hyperia-green/5 px-4 py-2 font-mono text-xs text-hyperia-green">
+              <span className="h-1.5 w-1.5 rounded-full bg-hyperia-green shadow-[0_0_8px_#39FF14]" />
+              OFFLINE BY DEFAULT
             </p>
 
-            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[3rem] lg:leading-[1.08]">
-              Protocol tracking
+            <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight text-hyperia-text sm:text-5xl lg:text-[3.25rem]">
+              Build your plan once.
               <br />
-              <span className="text-neutral-400">without the cloud</span>
+              <span className="bg-gradient-to-r from-hyperia-cyan to-hyperia-magenta bg-clip-text text-transparent">
+                Share it in one tap.
+              </span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-neutral-400 lg:mx-0">
-              Hyperia is a local-first workspace for complex schedules, inventory forecasts,
-              and clean exports — designed for privacy, built for precision.
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-hyperia-muted">
+              Hyperia is the offline protocol journal for people who plan in phases—and
+              post in forums without rebuilding everything in a spreadsheet.
             </p>
 
-            <div
-              id="cta"
-              className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start"
-            >
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <PlayStoreBadge href="#waitlist" />
               <motion.a
-                href="https://gethyperia.com"
+                href="#share"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-hyperia-teal px-8 py-3 text-sm font-semibold text-black shadow-[0_0_0_1px_rgba(45,212,191,0.3)] transition-shadow hover:shadow-[0_0_32px_rgba(45,212,191,0.3)] sm:w-auto"
+                className="inline-flex items-center justify-center rounded-xl border border-hyperia-border px-6 py-3 text-sm font-medium text-hyperia-text transition-colors hover:border-hyperia-magenta/40 hover:text-hyperia-magenta"
               >
-                Get Hyperia
-              </motion.a>
-              <motion.a
-                href="#showcase"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-3 text-sm font-medium text-white backdrop-blur-sm hover:border-white/20 hover:bg-white/10 sm:w-auto"
-              >
-                View the app
+                See how sharing works →
               </motion.a>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 lg:justify-start">
-              {trustPoints.map((point) => (
-                <span key={point} className="flex items-center gap-2 text-xs text-neutral-500">
-                  <span className="text-hyperia-teal">✓</span>
-                  {point}
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-hyperia-muted">
+              {['No account', '100% local', 'Forum-ready exports', 'Android'].map((t) => (
+                <span key={t} className="flex items-center gap-2">
+                  <span className="text-hyperia-cyan">▸</span>
+                  {t}
                 </span>
               ))}
             </div>
           </motion.div>
 
-          {/* Dual phone hero — dark primary, light offset */}
-          <div className="relative mx-auto h-[420px] w-full max-w-[400px] lg:mx-0 lg:ml-auto">
-            <motion.div
-              initial={{ opacity: 0, x: 24, y: 16 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute top-0 right-0 z-20 w-[58%]"
-            >
-              <PhoneFrame theme="dark" size="md">
-                <TimelineScreen theme="dark" />
-              </PhoneFrame>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -16, y: 32 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute top-16 left-0 z-10 w-[52%]"
-            >
-              <PhoneFrame theme="light" size="sm">
-                <ShareScreen theme="light" />
-              </PhoneFrame>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 rounded-full border border-white/10 bg-hyperia-bg/80 px-4 py-2 text-xs text-neutral-400 backdrop-blur-md"
-            >
-              <span className="text-hyperia-teal">●</span> Dark &{' '}
-              <span className="text-hyperia-purple">●</span> Light themes
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.65, delay: 0.15 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <PhoneFrame theme="dark" size="lg" className="glow-cyan">
+              <TimelineScreen theme="dark" />
+            </PhoneFrame>
+          </motion.div>
         </div>
       </div>
     </section>

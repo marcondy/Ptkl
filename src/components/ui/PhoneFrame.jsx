@@ -16,7 +16,7 @@ export default function PhoneFrame({
   const bezel =
     theme === 'light'
       ? 'border-neutral-200 bg-neutral-100 shadow-xl shadow-neutral-300/40'
-      : 'border-neutral-800 bg-neutral-950 shadow-2xl shadow-black/60'
+      : 'border-hyperia-border bg-hyperia-surface shadow-2xl shadow-black/60'
 
   const Wrapper = interactive ? motion.div : 'div'
   const motionProps = interactive
