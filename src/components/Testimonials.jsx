@@ -1,5 +1,6 @@
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
+import PageContainer from './ui/PageContainer'
 
 const quotes = [
   {
@@ -22,7 +23,7 @@ const quotes = [
 export default function Testimonials() {
   return (
     <section className="border-y border-hyperia-border/50 bg-hyperia-surface/50 py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <PageContainer>
         <MotionItem>
           <SectionHeader
             eyebrow="EARLY FEEDBACK"
@@ -31,12 +32,12 @@ export default function Testimonials() {
           />
         </MotionItem>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid min-w-0 gap-6 md:grid-cols-3">
           {quotes.map((q, i) => (
             <MotionItem
               key={q.author}
               delay={i * 0.08}
-              className="rounded-xl border border-hyperia-border bg-hyperia-card p-6"
+              className="min-w-0 rounded-xl border border-hyperia-border bg-hyperia-card p-4 sm:p-6"
             >
               <p className="text-sm leading-relaxed text-hyperia-muted">&ldquo;{q.text}&rdquo;</p>
               <div className="mt-6 border-t border-hyperia-border pt-4">
@@ -46,7 +47,7 @@ export default function Testimonials() {
             </MotionItem>
           ))}
         </div>
-      </div>
+      </PageContainer>
     </section>
   )
 }

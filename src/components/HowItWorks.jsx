@@ -1,5 +1,6 @@
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
+import PageContainer from './ui/PageContainer'
 
 const steps = [
   {
@@ -25,7 +26,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="border-y border-hyperia-border/50 bg-hyperia-surface/50 py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <PageContainer>
         <MotionItem>
           <SectionHeader
             eyebrow="HOW IT WORKS"
@@ -34,13 +35,10 @@ export default function HowItWorks() {
           />
         </MotionItem>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid min-w-0 gap-6 md:grid-cols-3 md:gap-8">
           {steps.map((item, i) => (
-            <MotionItem key={item.step} delay={i * 0.08} className="relative">
-              {i < steps.length - 1 && (
-                <div className="absolute top-8 left-full hidden h-px w-full bg-gradient-to-r from-hyperia-cyan/40 to-transparent md:block" />
-              )}
-              <div className="rounded-xl border border-hyperia-border bg-hyperia-card p-8">
+            <MotionItem key={item.step} delay={i * 0.08} className="min-w-0">
+              <div className="h-full rounded-xl border border-hyperia-border bg-hyperia-card p-6 sm:p-8">
                 <span className="font-mono text-3xl font-bold text-hyperia-cyan/30">
                   {item.step}
                 </span>
@@ -52,7 +50,7 @@ export default function HowItWorks() {
             </MotionItem>
           ))}
         </div>
-      </div>
+      </PageContainer>
     </section>
   )
 }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
+import PageContainer from './ui/PageContainer'
 
 const faqs = [
   {
@@ -40,12 +41,14 @@ function FaqItem({ item, isOpen, onToggle }) {
       <button
         type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between py-5 text-left"
+        className="flex w-full min-w-0 items-start justify-between gap-4 py-4 text-left sm:py-5"
       >
-        <span className="pr-4 text-base font-medium text-hyperia-text">{item.q}</span>
+        <span className="min-w-0 flex-1 text-sm font-medium text-hyperia-text sm:text-base">
+          {item.q}
+        </span>
         <motion.span
           animate={{ rotate: isOpen ? 45 : 0 }}
-          className="shrink-0 font-mono text-lg text-hyperia-cyan"
+          className="mt-0.5 shrink-0 font-mono text-lg text-hyperia-cyan"
         >
           +
         </motion.span>
@@ -59,7 +62,9 @@ function FaqItem({ item, isOpen, onToggle }) {
             transition={{ duration: 0.25 }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-sm leading-relaxed text-hyperia-muted">{item.a}</p>
+            <p className="pb-4 text-sm leading-relaxed text-hyperia-muted sm:pb-5">
+              {item.a}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -72,12 +77,15 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="py-16 lg:py-24">
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      <PageContainer narrow>
         <MotionItem>
           <SectionHeader eyebrow="FAQ" title="Common questions" />
         </MotionItem>
 
-        <MotionItem delay={0.08} className="mt-12 rounded-2xl border border-hyperia-border bg-hyperia-card px-6">
+        <MotionItem
+          delay={0.08}
+          className="mt-12 min-w-0 rounded-2xl border border-hyperia-border bg-hyperia-card px-4 sm:px-6"
+        >
           {faqs.map((item, i) => (
             <FaqItem
               key={item.q}
@@ -87,7 +95,7 @@ export default function FAQ() {
             />
           ))}
         </MotionItem>
-      </div>
+      </PageContainer>
     </section>
   )
 }

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
+import PageContainer from './ui/PageContainer'
 import PlayStoreBadge from './ui/PlayStoreBadge'
 
 const freeFeatures = [
@@ -30,7 +31,7 @@ const plans = [
 export default function Pricing() {
   return (
     <section id="pricing" className="py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <PageContainer>
         <MotionItem>
           <SectionHeader
             eyebrow="HYPERIA PRO"
@@ -39,18 +40,17 @@ export default function Pricing() {
           />
         </MotionItem>
 
-        {/* Free vs Pro comparison */}
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-12 grid min-w-0 gap-6 lg:grid-cols-2 lg:gap-8">
           <MotionItem delay={0.05}>
-            <div className="rounded-2xl border border-hyperia-border bg-hyperia-card p-8">
+            <div className="h-full rounded-2xl border border-hyperia-border bg-hyperia-card p-6 sm:p-8">
               <p className="font-mono text-xs tracking-widest text-hyperia-muted">FREE</p>
               <p className="mt-2 text-3xl font-semibold text-hyperia-text">$0</p>
               <p className="mt-1 text-sm text-hyperia-muted">Forever local. No account.</p>
               <ul className="mt-8 space-y-3">
                 {freeFeatures.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm text-hyperia-muted">
-                    <span className="text-hyperia-cyan">✓</span>
-                    {f}
+                  <li key={f} className="flex items-start gap-3 text-sm text-hyperia-muted">
+                    <span className="mt-0.5 shrink-0 text-hyperia-cyan">✓</span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -59,8 +59,8 @@ export default function Pricing() {
           </MotionItem>
 
           <MotionItem delay={0.1}>
-            <div className="relative rounded-2xl border border-hyperia-cyan/40 bg-hyperia-cyan/5 p-8 glow-cyan">
-              <span className="absolute -top-3 right-6 rounded-full bg-hyperia-cyan px-3 py-1 font-mono text-[10px] font-semibold text-black">
+            <div className="relative h-full rounded-2xl border border-hyperia-cyan/40 bg-hyperia-cyan/5 p-6 pt-10 glow-cyan sm:p-8 sm:pt-10">
+              <span className="absolute top-4 right-4 rounded-full bg-hyperia-cyan px-3 py-1 font-mono text-[10px] font-semibold text-black">
                 RECOMMENDED
               </span>
               <p className="font-mono text-xs tracking-widest text-hyperia-cyan">HYPERIA PRO</p>
@@ -68,9 +68,9 @@ export default function Pricing() {
               <p className="mt-1 text-sm text-hyperia-muted">Unlimited plans. Full backup.</p>
               <ul className="mt-8 space-y-3">
                 {proFeatures.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm text-hyperia-text">
-                    <span className="text-hyperia-green">✓</span>
-                    {f}
+                  <li key={f} className="flex items-start gap-3 text-sm text-hyperia-text">
+                    <span className="mt-0.5 shrink-0 text-hyperia-green">✓</span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -78,7 +78,7 @@ export default function Pricing() {
                 href="#waitlist"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="mt-8 flex w-full items-center justify-center rounded-xl bg-hyperia-cyan py-3 font-mono text-xs font-semibold tracking-wider text-black"
+                className="mt-8 flex w-full items-center justify-center rounded-xl bg-hyperia-cyan px-4 py-3 text-center font-mono text-[10px] font-semibold tracking-wider text-black sm:text-xs"
               >
                 UPGRADE TO HYPERIA PRO
               </motion.a>
@@ -86,13 +86,12 @@ export default function Pricing() {
           </MotionItem>
         </div>
 
-        {/* Pricing tiers */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid min-w-0 gap-4 sm:grid-cols-3">
           {plans.map((plan, i) => (
             <MotionItem
               key={plan.period}
               delay={0.12 + i * 0.04}
-              className={`rounded-xl border p-6 text-center ${
+              className={`min-w-0 rounded-xl border p-4 text-center sm:p-6 ${
                 plan.best
                   ? 'border-hyperia-green/40 bg-hyperia-green/5'
                   : 'border-hyperia-border bg-hyperia-card'
@@ -108,9 +107,11 @@ export default function Pricing() {
                 </span>
               )}
               <p className="mt-2 font-mono text-xs text-hyperia-muted">{plan.period}</p>
-              <p className="mt-2 text-2xl font-semibold text-hyperia-text">
+              <p className="mt-2 text-xl font-semibold text-hyperia-text sm:text-2xl">
                 {plan.price}
-                <span className="text-sm font-normal text-hyperia-muted">{plan.per}</span>
+                <span className="block text-sm font-normal text-hyperia-muted sm:inline sm:pl-1">
+                  {plan.per}
+                </span>
               </p>
               {plan.best && (
                 <p className="mt-2 font-mono text-[10px] text-hyperia-green">BEST VALUE</p>
@@ -118,7 +119,7 @@ export default function Pricing() {
             </MotionItem>
           ))}
         </div>
-      </div>
+      </PageContainer>
     </section>
   )
 }

@@ -8,9 +8,9 @@ export default function PhoneFrame({
   interactive = true,
 }) {
   const sizes = {
-    sm: 'max-w-[200px] rounded-[1.75rem] p-1.5',
-    md: 'max-w-[260px] rounded-[2.25rem] p-2',
-    lg: 'max-w-[300px] rounded-[2.5rem] p-2',
+    sm: 'w-full max-w-[min(200px,calc(100vw-2.5rem))] rounded-[1.75rem] p-1.5',
+    md: 'w-full max-w-[min(260px,calc(100vw-2.5rem))] rounded-[2.25rem] p-2',
+    lg: 'w-full max-w-[min(300px,calc(100vw-2.5rem))] rounded-[2.5rem] p-2',
   }
 
   const bezel =
@@ -28,7 +28,7 @@ export default function PhoneFrame({
 
   return (
     <Wrapper
-      className={`relative w-full overflow-hidden ${sizes[size]} border ${bezel} ${className}`}
+      className={`relative mx-auto min-w-0 overflow-hidden ${sizes[size]} border ${bezel} ${className}`}
       {...motionProps}
     >
       {children}
