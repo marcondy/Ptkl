@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
 import PageContainer from './ui/PageContainer'
-import AppScreenshot from './ui/AppScreenshot'
-import { screenshots } from '../data/screenshots'
+import ScreenDisplay from './ui/ScreenDisplay'
+import { appScreens } from '../data/screenshots'
 
 const namedExport = `| Item       | Weeks | Frequency    | Dose    |
 |------------|-------|--------------|---------|
@@ -50,7 +50,6 @@ export default function ShareSpotlight() {
                 <p className="truncate">week,dose,freq,notes,compound,vial</p>
                 <p>1,1.75,e5d,am,item_a,,</p>
                 <p>1,5,daily,pm,item_b,,</p>
-                <p>6,2,5xwk,,item_c,,</p>
                 <p className="text-hyperia-magenta">#REF! #REF!</p>
               </div>
               <p className="mt-3 text-sm text-hyperia-muted">
@@ -58,14 +57,6 @@ export default function ShareSpotlight() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-hyperia-cyan/30 bg-hyperia-cyan/5 p-4 glow-cyan sm:p-6">
-              <p className="font-mono text-xs tracking-wider text-hyperia-cyan">AFTER</p>
-              <p className="mt-3 text-sm text-hyperia-muted">
-                Clean markdown table — formatted for Reddit, Discord, and communities.
-              </p>
-            </div>
-
-            {/* Text export demo */}
             <div className="rounded-2xl border border-hyperia-border bg-hyperia-card p-4 sm:p-5">
               <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
                 <p className="font-mono text-[10px] tracking-widest text-hyperia-cyan sm:text-xs">
@@ -74,23 +65,23 @@ export default function ShareSpotlight() {
                 <button
                   type="button"
                   onClick={() => setAnonymized(!anonymized)}
-                  className={`rounded-full border px-3 py-1 font-mono text-[10px] transition-colors ${
+                  className={`rounded-full border px-3 py-1 font-mono text-[10px] ${
                     anonymized
                       ? 'border-hyperia-green/50 bg-hyperia-green/10 text-hyperia-green'
-                      : 'border-hyperia-border text-hyperia-muted hover:text-hyperia-text'
+                      : 'border-hyperia-border text-hyperia-muted'
                   }`}
                 >
                   {anonymized ? 'ANONYMIZER ON' : 'ANONYMIZER OFF'}
                 </button>
               </div>
-              <pre className="max-w-full overflow-x-auto rounded-lg border border-hyperia-border bg-hyperia-bg p-3 font-mono text-[9px] leading-relaxed whitespace-pre text-hyperia-muted sm:text-[10px]">
+              <pre className="max-w-full overflow-x-auto rounded-lg border border-hyperia-border bg-hyperia-bg p-3 font-mono text-[9px] whitespace-pre text-hyperia-muted sm:text-[10px]">
                 {anonymized ? anonExport : namedExport}
               </pre>
               <motion.button
                 type="button"
                 onClick={handleCopy}
                 whileTap={{ scale: 0.97 }}
-                className="mt-3 w-full rounded-lg bg-hyperia-cyan py-2.5 font-mono text-[10px] font-semibold tracking-wider text-black sm:text-xs"
+                className="mt-3 w-full rounded-lg bg-hyperia-cyan py-2.5 font-mono text-[10px] font-semibold text-black sm:text-xs"
               >
                 {copied ? '✓ COPIED TO CLIPBOARD' : 'COPY TO CLIPBOARD'}
               </motion.button>
@@ -99,35 +90,16 @@ export default function ShareSpotlight() {
 
           <MotionItem delay={0.12} className="flex min-w-0 justify-center lg:justify-end">
             <div className="w-full max-w-[min(320px,calc(100vw-2rem))]">
-              <p className="mb-4 text-center font-mono text-[10px] tracking-widest text-hyperia-muted sm:text-xs lg:text-right">
-                IN-APP SHARE SCREEN
-              </p>
-              <AppScreenshot
-                src={screenshots.shareDark.src}
-                alt={screenshots.shareDark.alt}
-                theme="dark"
-                size="xl"
-                position="top center"
-                className="glow-cyan"
-              />
+              <ScreenDisplay screen={appScreens.shareDark} size="xl" className="glow-cyan" />
             </div>
           </MotionItem>
         </div>
 
         <div className="mt-12 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            {
-              title: 'Reddit-ready tables',
-              desc: 'Markdown export with compound, weeks, frequency, and dose columns.',
-            },
-            {
-              title: 'Anonymizer mode',
-              desc: 'Share structure publicly without revealing exact item names.',
-            },
-            {
-              title: 'Branded footer',
-              desc: 'Every export links back to gethyperia.com. Hyperia+ on premium exports.',
-            },
+            { title: 'Reddit-ready tables', desc: 'Markdown export with weeks, frequency, and dose columns.' },
+            { title: 'Anonymizer mode', desc: 'Share structure publicly without revealing exact item names.' },
+            { title: 'Branded footer', desc: 'Every export links back to gethyperia.com.' },
           ].map((item, i) => (
             <MotionItem
               key={item.title}
@@ -139,18 +111,6 @@ export default function ShareSpotlight() {
             </MotionItem>
           ))}
         </div>
-
-        <MotionItem
-          delay={0.2}
-          className="mt-8 rounded-2xl border border-hyperia-magenta/20 bg-hyperia-magenta/5 p-6 sm:p-8"
-        >
-          <p className="font-mono text-xs tracking-widest text-hyperia-magenta">BUILT FOR COMMUNITIES</p>
-          <p className="mt-3 text-sm text-hyperia-muted sm:text-base">
-            Reddit-friendly formatting. Anonymizer for public posts. Optional link back to
-            gethyperia.com on every export — so your community finds the tool without you
-            selling it in every thread.
-          </p>
-        </MotionItem>
       </PageContainer>
     </section>
   )

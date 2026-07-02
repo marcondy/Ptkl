@@ -4,28 +4,30 @@ const themes = {
     card: 'bg-white border-neutral-200/80 shadow-sm',
     text: 'text-neutral-900',
     muted: 'text-neutral-500',
-    accent: 'text-hyperia-magenta',
-    accentBg: 'bg-hyperia-magenta',
-    accentSoft: 'bg-hyperia-magenta/10 text-hyperia-magenta border-hyperia-magenta/20',
+    accent: 'text-[#5d5cde]',
+    accentBg: 'bg-[#5d5cde]',
+    accentSoft: 'bg-[#5d5cde]/10 text-[#5d5cde] border-[#5d5cde]/25',
     tabTrack: 'bg-neutral-100',
     tabActive: 'bg-white text-neutral-900 shadow-sm',
     tabInactive: 'text-neutral-500',
     border: 'border-neutral-200',
-    dot: 'bg-hyperia-magenta',
+    dot: 'bg-[#5d5cde]',
+    progress: 'bg-[#5d5cde]',
   },
   dark: {
-    shell: 'bg-[#0a0a0f]',
-    card: 'bg-[#16161f] border-hyperia-border',
-    text: 'text-hyperia-text',
-    muted: 'text-hyperia-muted',
-    accent: 'text-hyperia-cyan',
-    accentBg: 'bg-hyperia-cyan',
-    accentSoft: 'bg-hyperia-cyan/10 text-hyperia-cyan border-hyperia-cyan/30',
-    tabTrack: 'bg-hyperia-card',
-    tabActive: 'bg-hyperia-surface text-hyperia-text shadow-sm',
-    tabInactive: 'text-hyperia-muted',
-    border: 'border-hyperia-border',
-    dot: 'bg-hyperia-cyan',
+    shell: 'bg-[#0f1115]',
+    card: 'bg-[#1a1d23] border-neutral-800',
+    text: 'text-white',
+    muted: 'text-neutral-500',
+    accent: 'text-[#2dd4bf]',
+    accentBg: 'bg-[#2dd4bf]',
+    accentSoft: 'bg-[#2dd4bf]/10 text-[#2dd4bf] border-[#2dd4bf]/30',
+    tabTrack: 'bg-neutral-900',
+    tabActive: 'bg-neutral-800 text-white shadow-sm',
+    tabInactive: 'text-neutral-500',
+    border: 'border-neutral-800',
+    dot: 'bg-[#2dd4bf]',
+    progress: 'bg-[#2dd4bf]',
   },
 }
 
@@ -39,20 +41,18 @@ export default function AppChrome({ theme = 'dark', compact = false }) {
   return (
     <>
       <div className={`flex items-center justify-between ${compact ? 'px-3 pt-2' : 'px-4 pt-3'}`}>
-        <span className={`font-mono text-[9px] font-bold tracking-[0.18em] ${t.accent}`}>
+        <span
+          className={`text-[9px] font-bold tracking-[0.15em] ${theme === 'light' ? 'text-[#5d5cde]' : 'text-[#2dd4bf]'}`}
+        >
           HYPERIA
         </span>
         <div className="flex items-center gap-1.5">
-          <span
-            className={`rounded border px-1 py-px font-mono text-[6px] font-semibold tracking-wider ${t.accentSoft}`}
-          >
-            PRO
+          <span className={`rounded border px-1 py-px text-[6px] font-semibold tracking-wider ${t.accentSoft}`}>
+            PREMIUM
           </span>
           <span className={`text-[9px] ${t.muted}`}>🔔</span>
           {!compact && (
-            <span className={`font-mono text-[7px] font-medium tracking-widest ${t.muted}`}>
-              LIBRARY
-            </span>
+            <span className={`text-[7px] font-medium tracking-widest ${t.muted}`}>LIBRARY</span>
           )}
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function AppChrome({ theme = 'dark', compact = false }) {
         {['ACTIVE', 'SCHEDULED', 'PAST'].map((tab, i) => (
           <div
             key={tab}
-            className={`flex-1 rounded-md py-1 text-center font-mono text-[7px] font-semibold tracking-wider ${
+            className={`flex-1 rounded-md py-1 text-center text-[7px] font-semibold tracking-wider ${
               i === 0 ? t.tabActive : t.tabInactive
             }`}
           >

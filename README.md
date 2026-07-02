@@ -40,20 +40,16 @@ Set `base` in `vite.config.js`:
 
 Enable **Settings → Pages → GitHub Actions** for automatic deploys on push to `main`.
 
-## Screenshots
+## App screens
 
-App screenshots live in `public/screenshots/`. The site crops them to portrait inside phone frames using `object-fit: cover`.
+The site renders **live UI components** built from the Hyperia screenshots you shared (timeline, share modal, inventory, library, plans list, settings, notifications).
 
-| File | Used in |
-|------|---------|
-| `timeline-dark.png` | Hero, App showcase (dark), Features |
-| `timeline-light.png` | App showcase (light toggle) |
-| `share-dark.png` | Share spotlight, App showcase |
-| `inventory-dark.png` | Features, App showcase |
-| `library-dark.png` | Features, App showcase |
-| `plans-list-dark.png` | Features, App showcase |
+To use **literal PNG files** instead:
 
-**To use your own exports:** replace any PNG in `public/screenshots/` (keep the same filename), or edit `src/data/screenshots.js` to point to new files. Portrait crops (~9:19.5) work best; landscape images are center-cropped automatically.
+1. Add your screenshots to `public/screenshots/` (see `public/screenshots/README.md` for filenames)
+2. Set `useImages: true` in `src/data/screenshots.js`
+
+Images are cropped to portrait inside phone frames via `object-fit: cover`.
 
 
 - **Colors:** Near-black bg, neon cyan `#00FFFF`, magenta `#E040FB`, green `#39FF14`

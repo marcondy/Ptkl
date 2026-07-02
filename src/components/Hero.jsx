@@ -1,17 +1,14 @@
 import { motion } from 'framer-motion'
 import PlayStoreBadge from './ui/PlayStoreBadge'
-import AppScreenshot from './ui/AppScreenshot'
+import ScreenDisplay from './ui/ScreenDisplay'
 import PageContainer from './ui/PageContainer'
-import { screenshots } from '../data/screenshots'
+import { appScreens } from '../data/screenshots'
 
 export default function Hero() {
-  const shot = screenshots.timelineDark
-
   return (
     <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24">
       <div className="pointer-events-none absolute inset-0 grid-bg" />
       <div className="pointer-events-none absolute top-0 left-1/2 h-[400px] w-[min(700px,100vw)] -translate-x-1/2 rounded-full bg-hyperia-cyan/[0.04] blur-3xl sm:h-[500px]" />
-      <div className="pointer-events-none absolute top-40 -right-8 h-[240px] w-[240px] rounded-full bg-hyperia-magenta/[0.04] blur-3xl sm:right-0 sm:h-[300px] sm:w-[300px]" />
 
       <PageContainer className="relative">
         <div className="grid min-w-0 items-center gap-10 lg:grid-cols-2 lg:gap-16">
@@ -69,23 +66,20 @@ export default function Hero() {
             transition={{ duration: 0.65, delay: 0.15 }}
             className="relative flex min-w-0 justify-center lg:justify-end"
           >
-            <AppScreenshot
-              src={shot.src}
-              alt={shot.alt}
-              theme={shot.theme}
+            <ScreenDisplay
+              screen={appScreens.timelineDark}
               size="xl"
-              position={shot.position}
-              priority
               className="glow-cyan"
+              priority
             />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              className="absolute -bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full border border-hyperia-border bg-hyperia-bg/90 px-4 py-2 font-mono text-[10px] text-hyperia-muted backdrop-blur-md sm:text-xs"
-            >
-              Actual app screenshot
-            </motion.div>
+            <div className="absolute -bottom-4 -left-2 z-10 hidden sm:block lg:-left-8">
+              <ScreenDisplay
+                screen={appScreens.shareLight}
+                size="sm"
+                className="shadow-2xl"
+                interactive={false}
+              />
+            </div>
           </motion.div>
         </div>
       </PageContainer>

@@ -2,25 +2,14 @@ import { motion } from 'framer-motion'
 import { screenshotUrl } from '../../data/screenshots'
 
 const sizes = {
-  sm: {
-    frame: 'w-full max-w-[min(180px,calc(100vw-2.5rem))] rounded-[1.75rem] p-1.5',
-    aspect: 'aspect-[9/19.5]',
-  },
-  md: {
-    frame: 'w-full max-w-[min(240px,calc(100vw-2.5rem))] rounded-[2.25rem] p-2',
-    aspect: 'aspect-[9/19.5]',
-  },
-  lg: {
-    frame: 'w-full max-w-[min(280px,calc(100vw-2.5rem))] rounded-[2.5rem] p-2',
-    aspect: 'aspect-[9/19.5]',
-  },
-  xl: {
-    frame: 'w-full max-w-[min(320px,calc(100vw-2rem))] rounded-[2.75rem] p-2.5',
-    aspect: 'aspect-[9/19.5]',
-  },
+  sm: 'w-full max-w-[min(180px,calc(100vw-2.5rem))] rounded-[1.75rem] p-1.5',
+  md: 'w-full max-w-[min(240px,calc(100vw-2.5rem))] rounded-[2.25rem] p-2',
+  lg: 'w-full max-w-[min(280px,calc(100vw-2.5rem))] rounded-[2.5rem] p-2',
+  xl: 'w-full max-w-[min(320px,calc(100vw-2rem))] rounded-[2.75rem] p-2.5',
 }
 
-export default function AppScreenshot({
+/** Renders a real screenshot PNG from /public/screenshots/ inside a phone frame. */
+export default function AppScreenshotImage({
   src,
   alt,
   theme = 'dark',
@@ -30,7 +19,6 @@ export default function AppScreenshot({
   interactive = true,
   priority = false,
 }) {
-  const s = sizes[size] ?? sizes.md
   const bezel =
     theme === 'light'
       ? 'border-neutral-200 bg-neutral-100 shadow-xl shadow-neutral-300/30'
@@ -38,18 +26,15 @@ export default function AppScreenshot({
 
   const Wrapper = interactive ? motion.div : 'div'
   const motionProps = interactive
-    ? {
-        whileHover: { y: -4, scale: 1.01 },
-        transition: { type: 'spring', stiffness: 320, damping: 24 },
-      }
+    ? { whileHover: { y: -4, scale: 1.01 }, transition: { type: 'spring', stiffness: 320, damping: 24 } }
     : {}
 
   return (
     <Wrapper
-      className={`relative mx-auto min-w-0 overflow-hidden ${s.frame} border ${bezel} ${className}`}
+      className={`relative mx-auto min-w-0 overflow-hidden ${sizes[size]} border ${bezel} ${className}`}
       {...motionProps}
     >
-      <div className={`relative ${s.aspect} w-full overflow-hidden bg-hyperia-bg`}>
+      <div className="relative aspect-[9/19.5] w-full overflow-hidden bg-[#0f1115]">
         <img
           src={screenshotUrl(src)}
           alt={alt}
