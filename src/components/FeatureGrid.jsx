@@ -1,5 +1,6 @@
 import { MotionItem } from './MotionSection'
 import SectionHeader from './ui/SectionHeader'
+import PageContainer from './ui/PageContainer'
 
 const features = [
   {
@@ -20,7 +21,7 @@ const features = [
     id: 'reminders',
     title: 'Smart reminders',
     description:
-      'Notifications tied to each item\'s frequency within your active plan. Respects your preferences.',
+      "Notifications tied to each item's frequency within your active plan. Respects your preferences.",
     tag: 'REMINDERS',
   },
   {
@@ -34,7 +35,7 @@ const features = [
     id: 'inventory',
     title: 'Inventory forecast',
     description:
-      'Vial math and container estimates per plan. Know what you\'ll need before you run out.',
+      "Vial math and container estimates per plan. Know what you'll need before you run out.",
     tag: 'FORECAST',
   },
   {
@@ -49,7 +50,7 @@ const features = [
 export default function FeatureGrid() {
   return (
     <section id="features" className="py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <PageContainer>
         <MotionItem>
           <SectionHeader
             eyebrow="PLAN LIKE A PRO"
@@ -58,12 +59,12 @@ export default function FeatureGrid() {
           />
         </MotionItem>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, i) => (
             <MotionItem
               key={feature.id}
               delay={i * 0.05}
-              className="group rounded-xl border border-hyperia-border bg-hyperia-card/50 p-6 transition-colors hover:border-hyperia-cyan/30 hover:bg-hyperia-card"
+              className="group min-w-0 rounded-xl border border-hyperia-border bg-hyperia-card/50 p-4 transition-colors hover:border-hyperia-cyan/30 hover:bg-hyperia-card sm:p-6"
             >
               <span className="font-mono text-[10px] tracking-widest text-hyperia-magenta">
                 {feature.tag}
@@ -75,7 +76,7 @@ export default function FeatureGrid() {
             </MotionItem>
           ))}
         </div>
-      </div>
+      </PageContainer>
     </section>
   )
 }

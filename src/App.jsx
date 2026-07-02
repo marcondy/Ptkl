@@ -13,9 +13,9 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-hyperia-bg text-hyperia-text antialiased">
+    <div className="min-h-screen w-full overflow-x-hidden bg-hyperia-bg text-hyperia-text antialiased">
       <Navbar />
-      <main>
+      <main className="w-full min-w-0 overflow-x-hidden">
         <Hero />
         <ProblemSolution />
         <ShareSpotlight />

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MotionItem } from './MotionSection'
+import PageContainer from './ui/PageContainer'
 import PlayStoreBadge from './ui/PlayStoreBadge'
 
 export default function Waitlist() {
@@ -14,27 +15,27 @@ export default function Waitlist() {
 
   return (
     <section id="waitlist" className="py-16 lg:py-24">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+      <PageContainer>
         <MotionItem>
-          <div className="relative overflow-hidden rounded-2xl border border-hyperia-cyan/30 bg-gradient-to-br from-hyperia-card to-hyperia-surface p-8 lg:p-12 glow-cyan">
+          <div className="relative overflow-hidden rounded-2xl border border-hyperia-cyan/30 bg-gradient-to-br from-hyperia-card to-hyperia-surface p-6 glow-cyan sm:p-8 lg:p-12">
             <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-hyperia-cyan/10 blur-3xl" />
 
-            <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
+            <div className="relative grid min-w-0 gap-8 lg:grid-cols-2 lg:items-center">
+              <div className="min-w-0 text-center lg:text-left">
                 <p className="font-mono text-xs tracking-widest text-hyperia-cyan">GET HYPERIA</p>
-                <h2 className="mt-3 text-3xl font-semibold text-hyperia-text">
+                <h2 className="mt-3 text-2xl font-semibold text-hyperia-text sm:text-3xl">
                   Available on Android
                 </h2>
-                <p className="mt-4 text-base text-hyperia-muted">
+                <p className="mt-4 text-sm text-hyperia-muted sm:text-base">
                   Get notified when Hyperia launches on Google Play — plus sharing tips for
                   clean forum posts.
                 </p>
-                <div className="mt-6">
-                  <PlayStoreBadge href="#waitlist" />
+                <div className="mt-6 flex justify-center lg:justify-start">
+                  <PlayStoreBadge href="#waitlist" className="w-full justify-center sm:w-auto" />
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
@@ -59,7 +60,7 @@ export default function Waitlist() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@email.com"
-                        className="w-full rounded-xl border border-hyperia-border bg-hyperia-bg px-4 py-3 text-sm text-hyperia-text placeholder:text-hyperia-muted focus:border-hyperia-cyan/50 focus:outline-none focus:ring-1 focus:ring-hyperia-cyan/30"
+                        className="w-full min-w-0 rounded-xl border border-hyperia-border bg-hyperia-bg px-4 py-3 text-sm text-hyperia-text placeholder:text-hyperia-muted focus:border-hyperia-cyan/50 focus:outline-none focus:ring-1 focus:ring-hyperia-cyan/30"
                       />
                     </div>
                     <motion.button
@@ -70,7 +71,7 @@ export default function Waitlist() {
                     >
                       JOIN WAITLIST
                     </motion.button>
-                    <p className="text-xs text-hyperia-muted">
+                    <p className="text-center text-xs text-hyperia-muted lg:text-left">
                       Your email is only used for launch updates. Never sold or shared.
                     </p>
                   </form>
@@ -79,7 +80,7 @@ export default function Waitlist() {
             </div>
           </div>
         </MotionItem>
-      </div>
+      </PageContainer>
     </section>
   )
 }
