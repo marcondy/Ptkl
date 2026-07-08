@@ -4,6 +4,9 @@ import AppScreen from './ui/AppScreen'
 import TimelineScreen from './screenshots/TimelineScreen'
 import PlansListScreen from './screenshots/PlansListScreen'
 
+import appDarkPlans from '../assets/screenshots/app_dark_plans.jpg'
+import appDarkToday from '../assets/screenshots/app_dark_today.jpg'
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-24 pb-16 lg:pt-32 lg:pb-24">
@@ -57,11 +60,11 @@ export default function Hero() {
             className="relative flex min-w-0 justify-center lg:justify-end"
           >
             <AppScreen theme="dark" size="xl" className="glow-neon !p-0 overflow-hidden">
-              <img src="/screenshots/app_dark_plans.jpg" alt="Hyperia Timeline" className="h-full w-full object-cover" />
+              <img src={appDarkPlans} alt="Hyperia Timeline" className="h-full w-full object-cover" />
             </AppScreen>
             <div className="absolute -bottom-2 -left-2 hidden sm:block lg:-left-6">
               <AppScreen theme="dark" size="sm" interactive={false} className="!p-0 overflow-hidden shadow-[0_0_40px_rgba(0,229,255,0.15)]">
-                <img src="/screenshots/app_dark_today.jpg" alt="Hyperia Today" className="h-full w-full object-cover" />
+                <img src={appDarkToday} alt="Hyperia Today" className="h-full w-full object-cover" />
               </AppScreen>
             </div>
           </motion.div>

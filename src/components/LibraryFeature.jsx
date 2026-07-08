@@ -1,7 +1,8 @@
 import FeatureSection from './ui/FeatureSection'
+import appDarkPlansToast from '../assets/screenshots/app_dark_plans_toast.jpg'
 
 export default function LibraryFeature() {
-  const Screen = () => <img src="/screenshots/app_dark_plans_toast.jpg" alt="Protocol Uplink UI" className="h-full w-full rounded-[1.25rem] object-cover" />
+  const Screen = () => <img src={appDarkPlansToast} alt="Protocol Uplink UI" className="h-full w-full rounded-[1.25rem] object-cover" />
 
   return (
     <FeatureSection
