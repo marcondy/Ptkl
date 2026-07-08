@@ -11,6 +11,7 @@ export default function FeatureSection({
   children,
   screen,
   reverse = false,
+  disableFrame = false,
   className = '',
 }) {
   const Screen = screen
@@ -30,9 +31,13 @@ export default function FeatureSection({
             delay={0.08}
             className={`flex min-w-0 justify-center ${reverse ? 'lg:order-1 lg:justify-start' : 'lg:justify-end'}`}
           >
-            <AppScreen theme="dark" size="lg" className="glow-neon">
+            {disableFrame ? (
               <Screen theme="dark" />
-            </AppScreen>
+            ) : (
+              <AppScreen theme="dark" size="lg" className="glow-neon">
+                <Screen theme="dark" />
+              </AppScreen>
+            )}
           </MotionItem>
         </div>
       </PageContainer>
