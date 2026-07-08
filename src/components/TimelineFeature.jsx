@@ -1,8 +1,8 @@
 import FeatureSection from './ui/FeatureSection'
-import appLightPlans from '../assets/screenshots/app_light_plans.jpg'
+import appCalculator from '../assets/screenshots/app_calculator.jpg'
 
 export default function TimelineFeature() {
-  const Screen = () => <img src={appLightPlans} alt="Timeline UI" className="h-full w-full rounded-[1.25rem] object-cover" />
+  const Screen = () => <img src={appCalculator} alt="Dose Calculator UI" className="h-full w-full rounded-[1.25rem] object-cover" />
 
   return (
     <FeatureSection
