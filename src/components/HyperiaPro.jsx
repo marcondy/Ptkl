@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { MotionItem } from './MotionSection'
 import PageContainer from './ui/PageContainer'
 import SectionLabel, { SectionTitle } from './ui/SectionLabel'
+import AppScreen from './ui/AppScreen'
+import appPricing from '../assets/screenshots/app_pricing.jpg'
 
 const freeFeatures = [
   '1 active plan',
@@ -23,23 +25,23 @@ const proFeatures = [
 const tiers = [
   {
     name: 'MAINTENANCE',
-    price: '$4.99',
-    period: '/ month',
-    desc: 'Tactical support. Unlocks dynamic inventory forecasting and advanced analytics.',
+    price: '$3.99',
+    period: '/ mo',
+    desc: '$3.99 billed monthly. Tactical support for dynamic forecasting.',
     highlight: false,
   },
   {
     name: 'QUARTERLY',
-    price: '$12.99',
-    period: '/ 3 mo',
-    desc: 'The Cycle Tier. Perfectly aligned with your standard 12-16 week protocol.',
+    price: '$3.33',
+    period: '/ mo',
+    desc: 'Best value. $9.99 billed every 3 months. The Cycle Tier.',
     highlight: true,
   },
   {
     name: 'FOUNDATION',
-    price: '$39.99',
-    period: '/ year',
-    desc: 'The permanent stack. For the dedicated athlete optimizing year-round.',
+    price: '$2.50',
+    period: '/ mo',
+    desc: '$29.99 billed annually. The permanent stack.',
     highlight: false,
   },
 ]
@@ -58,54 +60,64 @@ export default function HyperiaPro() {
           </p>
         </MotionItem>
 
-        <div className="mt-12 grid min-w-0 gap-4 sm:grid-cols-3">
-          {tiers.map((tier, i) => (
-            <MotionItem
-              key={tier.name}
-              delay={i * 0.06}
-              className={`rounded-2xl border p-6 ${
-                tier.highlight
-                  ? 'border-[#00E5FF]/40 bg-[#00E5FF]/5 glow-neon'
-                  : 'border-white/10 bg-[#121212]'
-              }`}
-            >
-              <p className="font-mono text-[10px] tracking-widest text-[#00E5FF]">{tier.name}</p>
-              <p className="mt-3 text-2xl font-semibold text-white">
-                {tier.price}
-                <span className="text-sm font-normal text-zinc-500">{tier.period}</span>
-              </p>
-              <p className="mt-3 text-sm text-zinc-400">{tier.desc}</p>
-            </MotionItem>
-          ))}
+        <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="space-y-10">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {tiers.map((tier, i) => (
+                <MotionItem
+                  key={tier.name}
+                  delay={i * 0.06}
+                  className={`rounded-2xl border p-6 ${
+                    tier.highlight
+                      ? 'border-[#00E5FF]/40 bg-[#00E5FF]/5 glow-neon sm:col-span-2 lg:col-span-1 xl:col-span-2'
+                      : 'border-white/10 bg-[#121212]'
+                  }`}
+                >
+                  <p className="font-mono text-[10px] tracking-widest text-[#00E5FF]">{tier.name}</p>
+                  <p className="mt-3 text-2xl font-semibold text-white">
+                    {tier.price}
+                    <span className="text-sm font-normal text-zinc-500">{tier.period}</span>
+                  </p>
+                  <p className="mt-3 text-sm text-zinc-400">{tier.desc}</p>
+                </MotionItem>
+              ))}
+            </div>
+            
+            <div className="grid gap-6 sm:grid-cols-2">
+              <MotionItem delay={0.1} className="rounded-2xl border border-white/10 bg-[#121212] p-6">
+                <p className="font-mono text-[10px] tracking-widest text-zinc-500">FREE</p>
+                <ul className="mt-4 space-y-2">
+                  {freeFeatures.map((f) => (
+                    <li key={f} className="flex items-center gap-2 font-mono text-xs text-zinc-400">
+                      <span className="text-[#00E5FF]">▸</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </MotionItem>
+    
+              <MotionItem delay={0.14} className="rounded-2xl border border-[#00E5FF]/30 bg-[#00E5FF]/5 p-6">
+                <p className="font-mono text-[10px] tracking-widest text-[#00E5FF]">PRO</p>
+                <ul className="mt-4 space-y-2">
+                  {proFeatures.map((f) => (
+                    <li key={f} className="flex items-center gap-2 font-mono text-xs text-zinc-300">
+                      <span className="text-[#00E5FF]">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </MotionItem>
+            </div>
+          </div>
+
+          <MotionItem delay={0.12} className="flex justify-center lg:justify-end">
+            <AppScreen theme="dark" size="lg" className="glow-neon !p-0 overflow-hidden">
+              <img src={appPricing} alt="Hyperia Pro Pricing" className="h-full w-full object-cover" />
+            </AppScreen>
+          </MotionItem>
         </div>
 
-        <div className="mt-10 grid min-w-0 gap-6 lg:grid-cols-2">
-          <MotionItem delay={0.1} className="rounded-2xl border border-white/10 bg-[#121212] p-6">
-            <p className="font-mono text-[10px] tracking-widest text-zinc-500">FREE</p>
-            <ul className="mt-4 space-y-2">
-              {freeFeatures.map((f) => (
-                <li key={f} className="flex items-center gap-2 font-mono text-xs text-zinc-400">
-                  <span className="text-[#00E5FF]">▸</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </MotionItem>
-
-          <MotionItem delay={0.14} className="rounded-2xl border border-[#00E5FF]/30 bg-[#00E5FF]/5 p-6">
-            <p className="font-mono text-[10px] tracking-widest text-[#00E5FF]">PRO</p>
-            <ul className="mt-4 space-y-2">
-              {proFeatures.map((f) => (
-                <li key={f} className="flex items-center gap-2 font-mono text-xs text-zinc-300">
-                  <span className="text-[#00E5FF]">✓</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </MotionItem>
-        </div>
-
-        <MotionItem delay={0.18} className="mt-10 text-center">
+        <MotionItem delay={0.18} className="mt-16 text-center">
           <motion.a
             href="#download"
             whileHover={{ scale: 1.02 }}
