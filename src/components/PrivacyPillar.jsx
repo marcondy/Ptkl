@@ -6,7 +6,7 @@ const specs = [
   { label: 'Storage', value: 'On device' },
   { label: 'Account', value: 'None' },
   { label: 'Cloud sync', value: 'Never' },
-  { label: 'Share', value: 'Optional CSV' },
+  { label: 'Share', value: 'Optional JSON' },
 ]
 
 export default function PrivacyPillar() {
@@ -15,11 +15,10 @@ export default function PrivacyPillar() {
       <PageContainer>
         <div className="grid min-w-0 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <MotionItem>
-            <SectionLabel>PRIVACY FIRST</SectionLabel>
-            <SectionTitle>Offline journal. Your data stays on device.</SectionTitle>
+            <SectionLabel>PILLAR 1: SOVEREIGNTY</SectionLabel>
+            <SectionTitle>Unbreakable Data Sovereignty.</SectionTitle>
             <SectionBody>
-              Hyperia empowers optimized individuals with full privacy. Your plans live locally —
-              share only when you decide. No servers, no profiles, no tracking.
+              Your protocol is nobody's business but your own. Hyperia operates 100% offline with zero cloud sync, no account creation, and no data harvesting. Every log, every dose, and every compound is stored strictly on-device. Absolute discretion for the modern athlete.
             </SectionBody>
           </MotionItem>
 
@@ -31,7 +30,7 @@ export default function PrivacyPillar() {
                 className="rounded-2xl border border-white/10 bg-[#121212] p-4"
               >
                 <p className="font-mono text-[10px] tracking-wider text-zinc-500">{spec.label}</p>
-                <p className="mt-2 font-mono text-sm font-medium text-[#00ffcc]">{spec.value}</p>
+                <p className="mt-2 font-mono text-sm font-medium text-[#00E5FF]">{spec.value}</p>
               </MotionItem>
             ))}
           </div>

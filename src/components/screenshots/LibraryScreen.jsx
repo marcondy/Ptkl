@@ -10,11 +10,11 @@ export default function LibraryScreen({ theme = 'dark' }) {
       <div className={`mx-3 mt-2 rounded-2xl border p-3 ${t.card}`}>
         <p className={`mb-2 font-mono text-[8px] font-bold tracking-widest ${t.text}`}>CATALOG MANAGEMENT</p>
         <div className={`mb-2 rounded-lg border px-2 py-1.5 font-mono text-[7px] ${t.muted} ${t.border}`}>
-          <span className="text-[6px]">CSV URL</span>
-          <p className={`truncate ${t.text}`}>community-catalog.csv</p>
+          <span className="text-[6px]">JSON URL</span>
+          <p className={`truncate ${t.text}`}>community-catalog.json</p>
         </div>
         <div className="rounded-lg bg-[#00ffcc] py-2 text-center font-mono text-[7px] font-bold text-black">
-          IMPORT CSV
+          IMPORT JSON
         </div>
       </div>
 

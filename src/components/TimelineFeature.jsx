@@ -1,14 +1,15 @@
 import FeatureSection from './ui/FeatureSection'
-import TimelineScreen from './screenshots/TimelineScreen'
 
 export default function TimelineFeature() {
+  const Screen = () => <img src="/screenshots/app_light_plans.jpg" alt="Timeline UI" className="h-full w-full rounded-[1.25rem] object-cover" />
+
   return (
     <FeatureSection
       id="timeline"
-      label="TIMELINE"
-      title="Active, scheduled, and past — one scrubber"
-      body="Organize plans across Active, Scheduled, and Past tabs. Week scrubber, progress tracking, and item cards with color-coded borders. Dense, precise layout built for complex timelines."
-      screen={TimelineScreen}
+      label="PILLAR 2: PRECISION"
+      title="Surgical Protocol Precision."
+      body="Move beyond rudimentary habit trackers. Engineer your cycles with multi-week visual timelines and granular dose segmenting down to the microgram (mcg) and International Unit (IU). Integrated vial and ampoule math automatically forecasts your inventory, ensuring you never miss a dose or scramble for a re-order."
+      screen={Screen}
     />
   )
 }

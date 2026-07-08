@@ -1,16 +1,17 @@
 import FeatureSection from './ui/FeatureSection'
-import LibraryScreen from './screenshots/LibraryScreen'
 
 export default function LibraryFeature() {
+  const Screen = () => <img src="/screenshots/app_dark_plans_toast.jpg" alt="Protocol Uplink UI" className="h-full w-full rounded-[1.25rem] object-cover" />
+
   return (
     <FeatureSection
       id="library"
-      label="ITEM LIBRARY"
-      title="Community CSV catalog import"
-      body="Build your personal item library. Import community preset lists from CSV URLs, search entries, and filter by class or route. Your catalog stays local — portable and sovereign."
-      screen={LibraryScreen}
+      label="PILLAR 3: PROTOCOL UPLINK"
+      title="Open-Source Performance."
+      body="Plug directly into elite collective intelligence. Seamlessly pull in peer-reviewed community protocols via JSON, or export your exact cycle math into clean, ASCII-formatted tables ready for forum tear-downs. It's open-source performance, standardized."
+      screen={Screen}
       reverse
-      className="bg-[#0a0a0a]"
+      className="bg-[#050507]"
     />
   )
 }

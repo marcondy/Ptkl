@@ -34,10 +34,10 @@ export default function BackupScreen({ theme = 'dark' }) {
 
         <div className="mt-3 space-y-2">
           <div className="rounded-lg border border-[#00ffcc]/30 bg-[#00ffcc]/5 py-2 text-center font-mono text-[7px] font-bold text-[#00ffcc]">
-            DOWNLOAD CSV BACKUP
+            DOWNLOAD JSON BACKUP
           </div>
           <div className="rounded-lg border border-white/10 py-2 text-center font-mono text-[7px] text-zinc-400">
-            UPLOAD CSV RESTORE
+            UPLOAD JSON RESTORE
           </div>
         </div>
 

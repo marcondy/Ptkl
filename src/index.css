@@ -3,11 +3,12 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: 'Outfit', sans-serif;
 
   /* Dark mode (default) */
-  --color-hyperia-bg: #000000;
-  --color-hyperia-surface: #0f0f0f;
-  --color-hyperia-card: #121212;
+  --color-hyperia-bg: #050507;
+  --color-hyperia-surface: #121216;
+  --color-hyperia-card: #121216;
   --color-hyperia-elevated: #18181b;
   --color-hyperia-border: rgba(255, 255, 255, 0.1);
   --color-hyperia-muted: #71717a;
@@ -15,11 +16,12 @@
   --color-hyperia-text-dim: #a1a1aa;
 
   /* Accents */
-  --color-hyperia-neon: #00ffcc;
-  --color-hyperia-teal: #2dd4bf;
+  --color-hyperia-neon: #00E5FF;
+  --color-hyperia-teal: #00FF66;
   --color-hyperia-indigo: #4f46e5;
   --color-hyperia-magenta: #e040fb;
   --color-hyperia-green: #39ff14;
+  --color-hyperia-red: #FF3366;
 }
 
 * {
@@ -69,12 +71,12 @@ body {
 }
 
 .glow-neon {
-  box-shadow: 0 0 24px rgba(0, 255, 204, 0.2);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.2);
 }
 
 .grid-subtle {
   background-image:
-    linear-gradient(rgba(0, 255, 204, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 204, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
   background-size: 32px 32px;
 }

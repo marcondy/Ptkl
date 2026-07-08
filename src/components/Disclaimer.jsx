@@ -12,7 +12,7 @@ export default function Disclaimer() {
         </p>
         <p className="mt-4 text-sm leading-relaxed text-zinc-500">
           Hyperia stores data locally on your device. We do not operate user accounts or cloud storage
-          for plan data. CSV backup and share are optional and under your control.
+          for plan data. JSON backup and share are optional and under your control.
         </p>
       </PageContainer>
     </section>

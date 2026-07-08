@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="text-center sm:text-left">
             <p className="font-mono text-sm font-bold tracking-[0.2em] text-[#00ffcc]">HYPERIA</p>
             <p className="mt-2 font-mono text-[10px] text-zinc-600">
-              © {year} · Local · Optional share · CSV portable
+              © {year} · Local · Optional share · JSON portable
             </p>
           </div>
 
@@ -18,7 +18,7 @@ export default function Footer() {
             {[
               { label: 'gethyperia.com', href: 'https://gethyperia.com' },
               { label: 'Disclaimer', href: '#disclaimer' },
-              { label: 'Community CSV', href: 'https://github.com' },
+              { label: 'Community JSON', href: 'https://github.com' },
             ].map((link) => (
               <a
                 key={link.label}
