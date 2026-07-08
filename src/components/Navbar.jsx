@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import PageContainer from './ui/PageContainer'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.svg'
 
 const links = [
   { label: 'Privacy', href: '#privacy' },
