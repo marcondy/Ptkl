@@ -1,8 +1,8 @@
 import FeatureSection from './ui/FeatureSection'
-import appDarkToday from '../assets/screenshots/app_dark_today.jpg'
+import appNotificationsDark from '../assets/screenshots/app_notifications_dark.jpg'
 
 export default function RemindersFeature() {
-  const Screen = () => <img src={appDarkToday} alt="Reminders UI" className="h-full w-full rounded-[1.25rem] object-cover" />
+  const Screen = () => <img src={appNotificationsDark} alt="Reminders UI" className="h-full w-full rounded-[1.25rem] object-cover" />
 
   return (
     <FeatureSection
