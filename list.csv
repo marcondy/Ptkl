@@ -1,0 +1,4 @@
+file,type,label,description
+items.csv,items,Items catalog,Community compounds supplements and peptides
+exercises.csv,exercises,Gym exercises,Default strength and cardio library
+kettlebell.csv,exercises,Kettlebell,Kettlebell-focused movements
