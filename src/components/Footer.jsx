@@ -16,8 +16,9 @@ export default function Footer() {
 
           <div className="flex flex-wrap justify-center gap-6">
             {[
+              { label: 'Privacy Policy', href: '/privacy' },
               { label: 'gethyperia.com', href: 'https://gethyperia.com' },
-              { label: 'Disclaimer', href: '#disclaimer' },
+              { label: 'Disclaimer', href: '/#disclaimer' },
               { label: 'Community JSON', href: 'https://github.com' },
             ].map((link) => (
               <a

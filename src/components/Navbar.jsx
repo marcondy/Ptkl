@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <PageContainer>
         <nav className="flex min-w-0 items-center justify-between gap-3 py-4">
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <img src={logo} alt="Hyperia Logo" className="h-6 w-6 sm:h-7 sm:w-7" />
             <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#00E5FF] sm:text-sm">
               HYPERIA
