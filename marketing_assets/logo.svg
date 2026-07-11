@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+    <!-- Outer concentric tracking cycle (Neon Cyan) -->
+    <path stroke="#00FFFF" stroke-width="3.5" stroke-linecap="round" fill="none" d="M 54 26 A 28 28 0 1 1 53.9 26 Z" />
+        
+    <!-- Inner concentric substance cycle (Neon Magenta) -->
+    <path stroke="#FF00FF" stroke-width="3" stroke-linecap="round" fill="none" d="M 54 36 A 18 18 0 1 1 53.9 36 Z" />
+        
+    <!-- Core central atom / anchor node (White) -->
+    <path fill="#FFFFFF" d="M 54 49 A 5 5 0 1 1 53.9 49 Z" />
+        
+    <!-- Top data node indicator -->
+    <path fill="#00FFFF" d="M 54 22 A 4 4 0 1 1 53.9 22 Z" />
+
+    <!-- Bottom-right tracking indicator -->
+    <path fill="#FF00FF" d="M 68 64 A 4 4 0 1 1 67.9 64 Z" />
+</svg>
