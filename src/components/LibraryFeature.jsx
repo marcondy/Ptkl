@@ -29,7 +29,7 @@ export default function LibraryFeature() {
       id="library"
       label="PILLAR 3: PROTOCOL UPLINK"
       title="Community Source."
-      body="Plug directly into elite collective intelligence. Seamlessly pull in peer-reviewed community catalogs via CSV, or export your exact cycle math into clean, ASCII-formatted tables ready for forum tear-downs. It's community-sourced performance, standardized."
+      body="Plug directly into elite collective intelligence. Export your exact cycle and workout math into clean, Reddit-ready ASCII-formatted tables for forum tear-downs. Toggle Privacy Mode to instantly scrub custom names and replace your real start date with 'Day 1'—sharing your protocol, not your identity."
       screen={Screen}
       reverse
       disableFrame={true}

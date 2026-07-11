@@ -8,8 +8,8 @@ export default function TimelineFeature() {
     <FeatureSection
       id="timeline"
       label="PILLAR 2: PRECISION"
-      title="Surgical Protocol Precision."
-      body="Move beyond rudimentary habit trackers. Engineer your cycles with multi-week visual timelines and granular dose segmenting down to the microgram (mcg) and International Unit (IU). Integrated vial and ampoule math automatically forecasts your inventory, ensuring you never miss a dose or scramble for a re-order."
+      title="Unified One-Tap Dashboard."
+      body="Move beyond rudimentary habit trackers. Engineer your cycles alongside your workout splits. Log your daily dose or workout with a single tap. Life happens—if you miss a day, toggle the Shift Missed Day engine and your entire schedule seamlessly slides forward. No overlaps, no broken streaks."
       screen={Screen}
     />
   )

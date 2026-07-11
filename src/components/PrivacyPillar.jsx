@@ -18,7 +18,7 @@ export default function PrivacyPillar() {
             <SectionLabel>PILLAR 1: SOVEREIGNTY</SectionLabel>
             <SectionTitle>Unbreakable Data Sovereignty.</SectionTitle>
             <SectionBody>
-              Your protocol is nobody's business but your own. Hyperia operates 100% offline with zero cloud sync, no account creation, and no data harvesting. Every log, every dose, and every compound is stored strictly on-device. Absolute discretion for the modern athlete.
+              Your protocol is nobody's business but your own. Hyperia operates 100% offline with zero cloud sync, no account creation, and no data harvesting. Every log, every dose, and every workout routine is stored strictly on-device in a local database. Absolute discretion for the modern athlete.
             </SectionBody>
           </MotionItem>
 

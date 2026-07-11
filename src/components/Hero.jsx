@@ -24,11 +24,11 @@ export default function Hero() {
             <p className="font-mono text-xs font-bold tracking-[0.25em] text-[#00E5FF]">HYPERIA</p>
 
             <h1 className="mt-4 font-heading text-[1.75rem] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Precision Protocol Engineering.<br/>Absolute Data Sovereignty.
+              Precision Cycle & Workout Engineering.
             </h1>
 
             <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-zinc-400 sm:text-base lg:mx-0">
-              The offline-first cycle tracker built for serious athletes. Manage complex compounds, forecast inventory down to the drop, and execute with absolute precision—all securely locked on your device. Zero cloud surveillance. Zero compromises.
+              The offline-first cycle tracker and workout planner built for serious athletes. Manage complex compounds, schedule split routines, and execute with absolute precision—all securely locked on your device. Zero cloud surveillance. Zero compromises.
             </p>
 
             <div id="download" className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center lg:justify-start">
