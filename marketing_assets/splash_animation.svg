@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="512" height="512" style="background-color: #0A0A0A;">
+    <g>
+        <!-- The rotation animation: from 0 to 360 degrees around the center point (80, 80) every 1.5 seconds -->
+        <animateTransform 
+            attributeName="transform" 
+            type="rotate" 
+            from="0 80 80" 
+            to="360 80 80" 
+            dur="1.5s" 
+            repeatCount="indefinite" 
+        />
+        
+        <!-- Top Circle (Cyan) -->
+        <circle cx="80" cy="20" r="24" fill="#00FFFF" />
+        
+        <!-- Bottom Right Circle (Magenta) -->
+        <circle cx="132" cy="110" r="24" fill="#FF00FF" />
+        
+        <!-- Bottom Left Circle (Cyan with 80% opacity) -->
+        <circle cx="28" cy="110" r="24" fill="rgba(0, 255, 255, 0.8)" />
+    </g>
+</svg>
