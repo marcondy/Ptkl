@@ -35,7 +35,7 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <section className="py-24 bg-[var(--color-hyperia-surface)] border-t border-[var(--color-hyperia-border)]">
+    <section id="features" className="py-24 bg-[var(--color-hyperia-surface)] border-t border-[var(--color-hyperia-border)]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-sm text-[var(--color-hyperia-teal)] mono-label mb-4">SYSTEM CAPABILITIES</h2>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function PrivacyPillar() {
   return (
-    <section className="py-24 relative overflow-hidden bg-[var(--color-hyperia-surface)] border-y border-[var(--color-hyperia-border)]">
+    <section id="privacy" className="py-24 relative overflow-hidden bg-[var(--color-hyperia-surface)] border-y border-[var(--color-hyperia-border)]">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-hyperia-surface)_0%,_black_100%)]"></div>
       
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">

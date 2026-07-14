@@ -4,9 +4,9 @@ import PageContainer from './ui/PageContainer'
 import logo from '../assets/logo.svg'
 
 const links = [
+  { label: 'Manifesto', href: '#manifesto' },
+  { label: 'Features', href: '#features' },
   { label: 'Privacy', href: '#privacy' },
-  { label: 'Timeline', href: '#timeline' },
-  { label: 'Library', href: '#library' },
   { label: 'Pro', href: '#pro' },
 ]
 
@@ -47,10 +47,12 @@ export default function Navbar() {
           </div>
 
           <motion.a
-            href="#download"
+            href="https://play.google.com/store/apps/details?id=com.gethyperia.app"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="shrink-0 rounded-lg border border-[#00ffcc]/40 bg-[#00ffcc]/10 px-3 py-2 font-mono text-[10px] font-medium text-[#00ffcc] sm:px-4 sm:text-xs"
+            className="shrink-0 rounded-lg border border-[var(--color-hyperia-neon)]/40 bg-[var(--color-hyperia-neon)]/10 px-3 py-2 font-mono text-[10px] font-medium text-[var(--color-hyperia-neon)] sm:px-4 sm:text-xs"
           >
             GET APP
           </motion.a>

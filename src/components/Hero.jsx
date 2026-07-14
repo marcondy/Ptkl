@@ -30,9 +30,9 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button className="glow-neon px-8 py-4 bg-[var(--color-hyperia-neon)] text-black font-semibold rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 mono-label">
+            <a href="https://play.google.com/store/apps/details?id=com.gethyperia.app" className="glow-neon px-8 py-4 bg-[var(--color-hyperia-neon)] text-black font-semibold rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 mono-label inline-block">
               GET APP
-            </button>
+            </a>
             <a href="#manifesto" className="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-lg hover:border-white/50 transition-colors duration-300 mono-label inline-block">
               READ THE MANIFESTO
             </a>

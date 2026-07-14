@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function HyperiaPro() {
   return (
-    <section className="py-24 relative overflow-hidden bg-black">
+    <section id="pro" className="py-24 relative overflow-hidden bg-black">
       <div className="absolute inset-0 grid-subtle opacity-30"></div>
       
       <div className="max-w-6xl mx-auto px-6 relative z-10 text-center">
