@@ -1,41 +1,41 @@
-import { MotionItem } from './MotionSection'
-import PageContainer from './ui/PageContainer'
-import SectionLabel, { SectionTitle, SectionBody } from './ui/SectionLabel'
-
-const specs = [
-  { label: 'Storage', value: 'On device' },
-  { label: 'Account', value: 'None' },
-  { label: 'Cloud sync', value: 'Never' },
-  { label: 'Share', value: 'Optional JSON' },
-]
+import { motion } from 'framer-motion';
 
 export default function PrivacyPillar() {
   return (
-    <section id="privacy" className="border-y border-white/10 bg-[#0f0f0f] py-16 lg:py-20">
-      <PageContainer>
-        <div className="grid min-w-0 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <MotionItem>
-            <SectionLabel>PILLAR 1: SOVEREIGNTY</SectionLabel>
-            <SectionTitle>Unbreakable Data Sovereignty.</SectionTitle>
-            <SectionBody>
-              Your protocol is nobody's business but your own. Hyperia operates 100% offline with zero cloud sync, no account creation, and no data harvesting. Every log, every dose, and every workout routine is stored strictly on-device in a local database. Absolute discretion for the modern athlete.
-            </SectionBody>
-          </MotionItem>
-
-          <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-4">
-            {specs.map((spec, i) => (
-              <MotionItem
-                key={spec.label}
-                delay={i * 0.05}
-                className="rounded-2xl border border-white/10 bg-[#121212] p-4"
-              >
-                <p className="font-mono text-[10px] tracking-wider text-zinc-500">{spec.label}</p>
-                <p className="mt-2 font-mono text-sm font-medium text-[#00E5FF]">{spec.value}</p>
-              </MotionItem>
-            ))}
+    <section className="py-24 relative overflow-hidden bg-[var(--color-hyperia-surface)] border-y border-[var(--color-hyperia-border)]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--color-hyperia-surface)_0%,_black_100%)]"></div>
+      
+      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--color-hyperia-red)]/10 border border-[var(--color-hyperia-red)]/30 mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[var(--color-hyperia-red)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
           </div>
-        </div>
-      </PageContainer>
+          
+          <h2 className="text-sm text-[var(--color-hyperia-red)] mono-label mb-4 tracking-widest">DATA SOVEREIGNTY</h2>
+          <h3 className="text-4xl md:text-5xl font-bold mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
+            No Cloud.<br />No Accounts.<br />No Tracking.
+          </h3>
+          
+          <div className="p-6 card-dark border-[var(--color-hyperia-red)]/20 bg-black max-w-2xl mx-auto relative overflow-hidden">
+             {/* Security lines */}
+             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--color-hyperia-red)] to-transparent opacity-50"></div>
+             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--color-hyperia-red)] to-transparent opacity-50"></div>
+
+            <p className="text-lg text-white font-medium mb-2">Your data stays exactly where it belongs: on your device.</p>
+            <p className="text-[var(--color-hyperia-text-dim)]">
+              Hyperia operates entirely offline. We do not have servers. We do not have a database of your protocols. We cannot see, share, or sell your information. Period.
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </section>
-  )
+  );
 }
