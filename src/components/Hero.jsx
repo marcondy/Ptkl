@@ -31,7 +31,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button className="glow-neon px-8 py-4 bg-[var(--color-hyperia-neon)] text-black font-semibold rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 mono-label">
-              DOWNLOAD FOR ANDROID
+              GET APP
             </button>
             <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-lg hover:border-white/50 transition-colors duration-300 mono-label">
               READ THE MANIFESTO
