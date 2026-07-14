@@ -34,7 +34,7 @@ export default function Manifesto() {
               <div className="absolute -left-[5px] top-0 w-2 h-2 bg-[var(--color-hyperia-neon)] rounded-full glow-neon"></div>
               <h4 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>II. Optimization over Normalcy</h4>
               <p>
-                We refuse to accept the baseline. The human machine is capable of extraordinary output when systematically tuned. We measure, we iterate, and we protocolize our routines. From hypertrophic cycles to nootropic stacks, we believe in the methodical documentation of inputs to master our outputs. Hyperia is the instrument for this pursuit.
+                We refuse to accept the baseline. The human machine is capable of extraordinary output when systematically tuned. We measure, we iterate, and we protocolize our routines. From hypertrophic cycles and intensive workout logging to nootropic stacks, we believe in the methodical documentation of physical training and chemical inputs to master our outputs. Hyperia is the instrument for this pursuit.
               </p>
             </div>
 

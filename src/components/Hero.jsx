@@ -26,7 +26,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-xl text-[var(--color-hyperia-text-dim)] mb-12 max-w-2xl mx-auto leading-relaxed">
-            The unified, private, offline-first protocol planner for sovereign individuals. Optimize your stack. Own your data.
+            The unified, private, offline-first protocol planner and workout logger for sovereign individuals. Optimize your stack. Log your workouts. Own your data.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
