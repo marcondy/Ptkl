@@ -9,6 +9,7 @@ import HyperiaPro from './components/HyperiaPro'
 import Disclaimer from './components/Disclaimer'
 import Footer from './components/Footer'
 import SplashScreen from './components/SplashScreen'
+import Manifesto from './components/Manifesto'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Sharing />
         <PrivacyPillar />
         <HyperiaPro />
+        <Manifesto />
         <Disclaimer />
       </main>
       <Footer />

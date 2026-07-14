@@ -33,9 +33,9 @@ export default function Hero() {
             <button className="glow-neon px-8 py-4 bg-[var(--color-hyperia-neon)] text-black font-semibold rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 mono-label">
               GET APP
             </button>
-            <button className="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-lg hover:border-white/50 transition-colors duration-300 mono-label">
+            <a href="#manifesto" className="px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-lg hover:border-white/50 transition-colors duration-300 mono-label inline-block">
               READ THE MANIFESTO
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

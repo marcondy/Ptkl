@@ -1,48 +1,15 @@
-# Hyperia Landing Page
+# The Hyperia Manifesto
 
-Marketing website for [Hyperia](https://gethyperia.com) — the unified, private, offline-first protocol planner for sovereign individuals.
+## I. Data Sovereignty
+In an era of ubiquitous surveillance and data harvesting, true ownership is radical. We reject the premise that our most sensitive biological, psychological, and optimization data should reside on servers we do not control. The cloud is not a convenience; it is a vulnerability. Hyperia is built on the absolute conviction that your data is yours. Local-first is not a feature—it is the foundation of sovereignty. 
 
-**Your Journey. Your Data. Your Rules.**
+## II. Optimization over Normalcy
+We refuse to accept the baseline. The human machine is capable of extraordinary output when systematically tuned. We measure, we iterate, and we protocolize our routines. From hypertrophic cycles to nootropic stacks, we believe in the methodical documentation of inputs to master our outputs. Hyperia is the instrument for this pursuit.
 
-## Design System
+## III. Anti-Fragile Systems
+A protocol that depends on a subscription to a third-party server is inherently fragile. If a company fails, if servers go offline, or if internet access is severed, your progress should not halt. We build in plaintext. We export in universal formats. We ensure that your system of optimization outlives any single piece of software. 
 
-The app utilizes a Cyberpunk-Minimalist aesthetic to enforce the concept of "Sovereign Logging" and "Data Sovereignty".
+## IV. Order from Chaos
+The current state of protocol sharing is unacceptable. Fragmented forum threads, encrypted messaging groups, and disorganized spreadsheets breed confusion and error. Hyperia establishes a unified, clean, and uncompromising standard. We bring surgical precision to the chaotic art of human optimization.
 
-| Token | Value |
-|-------|-------|
-| `--color-hyperia-bg` | `#050507` |
-| `--color-hyperia-surface` | `#121216` |
-| `--color-hyperia-neon` | `#00E5FF` |
-| `--color-hyperia-teal` | `#00FF66` |
-| `--color-hyperia-magenta`| `#e040fb` |
-| `--color-hyperia-red` | `#FF3366` |
-| Font UI | Inter, Outfit (Headings) |
-| Font labels | JetBrains Mono |
-
-*Dark theme default. Monospace uppercase section labels. Grid-subtle backgrounds with neon glow effects.*
-
-## Structure
-
-1. **Hero** — "Your Journey. Your Data. Your Rules", CTA, glitch/glow effects.
-2. **The Problem** — Fragmented data, messy spreadsheets, zero privacy.
-3. **The Solution** — Hyperia: Order, Precision, Control.
-4. **Feature Grid** — Protocol Planner, Local-First Privacy, Integrated Workout Tracker, Dose Calculator, Body-Map Tracking, Universal Sharing.
-5. **Universal Export** — "Share to Show, Share to Use" via ASCII, Markdown, and CSV.
-6. **Data Sovereignty (Privacy)** — No Cloud. No Accounts. No Tracking.
-7. **Hyperia Pro** — Quarterly / Annual tiers for unlimited optimization.
-8. **Disclaimer** — Not medical advice.
-9. **Footer** — Community links (Telegram/X) and copyright.
-
-## Development
-
-```bash
-npm install
-npm run dev
-npm run build
-```
-
-The layout is built with React, Tailwind CSS v4, and `framer-motion` for micro-animations.
-
-## Deploy
-
-GitHub Pages: set `base` in `vite.config.js`, enable Actions source in repo Settings → Pages.
+*Your Journey. Your Data. Your Rules.*
