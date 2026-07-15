@@ -29,7 +29,7 @@ export default function Hero() {
             The unified, private, offline-first protocol planner and workout logger for sovereign individuals. Optimize your stack. Log your workouts. Own your data.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
             <a href="https://play.google.com/store/apps/details?id=com.gethyperia.app" className="glow-neon px-8 py-4 bg-[var(--color-hyperia-neon)] text-black font-semibold rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 mono-label inline-block">
               GET APP
             </a>
@@ -37,6 +37,19 @@ export default function Hero() {
               READ THE MANIFESTO
             </a>
           </div>
+          
+          {/* Hero Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="flex justify-center mt-12"
+          >
+            <div className="relative border-gray-900 border-[10px] md:border-[12px] rounded-[2.5rem] h-[550px] w-[260px] md:h-[600px] md:w-[280px] shadow-2xl overflow-hidden glow-neon bg-black transform rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
+              <div className="absolute top-0 inset-x-0 h-6 bg-black z-20 rounded-b-3xl w-32 mx-auto"></div>
+              <img src="/screenshots/mockup_1.jpg" alt="Hyperia Due Today View" className="w-full h-full object-cover relative z-10" />
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

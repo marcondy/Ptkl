@@ -8,35 +8,17 @@ export default function Solution() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center flex-row-reverse md:flex-row">
           
-          {/* Visual Order */}
+          {/* Phone Mockup */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[400px] w-full card-dark p-6 flex flex-col justify-center order-2 md:order-1 glow-neon"
+            className="order-2 md:order-1 flex justify-center w-full"
           >
-            <div className="space-y-4 relative z-10">
-              <div className="flex items-center gap-4 bg-[var(--color-hyperia-surface)] p-4 rounded-lg border border-[var(--color-hyperia-border)]">
-                <div className="w-2 h-2 rounded-full bg-[var(--color-hyperia-teal)] animate-pulse"></div>
-                <div className="flex-1">
-                  <p className="text-white font-medium">Hypertrophy Cycle Alpha</p>
-                  <p className="text-[var(--color-hyperia-text-dim)] font-mono text-xs mt-1">Status: ACTIVE // Day 14 of 90</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 bg-[var(--color-hyperia-surface)] p-4 rounded-lg border border-[var(--color-hyperia-border)] opacity-70">
-                <div className="w-2 h-2 rounded-full bg-[var(--color-hyperia-text-dim)]"></div>
-                <div className="flex-1">
-                  <p className="text-white font-medium">Nootropic Stack Beta</p>
-                  <p className="text-[var(--color-hyperia-text-dim)] font-mono text-xs mt-1">Status: ARCHIVED</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 bg-[var(--color-hyperia-surface)] p-4 rounded-lg border border-[var(--color-hyperia-border)]">
-                <div className="w-2 h-2 rounded-full bg-[var(--color-hyperia-neon)] glow-neon"></div>
-                <div className="flex-1">
-                  <p className="text-[var(--color-hyperia-neon)] font-medium">Protocol Compiled Successfully.</p>
-                </div>
-              </div>
+            <div className="relative border-gray-900 border-[10px] md:border-[12px] rounded-[2.5rem] h-[550px] w-[260px] md:h-[600px] md:w-[280px] shadow-2xl overflow-hidden glow-neon bg-black">
+              <div className="absolute top-0 inset-x-0 h-6 bg-black z-20 rounded-b-3xl w-32 mx-auto"></div>
+              <img src="/screenshots/mockup_2.jpg" alt="Hyperia Plans View" className="w-full h-full object-cover relative z-10" />
             </div>
           </motion.div>
 

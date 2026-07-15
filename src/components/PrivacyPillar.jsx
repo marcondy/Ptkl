@@ -34,6 +34,21 @@ export default function PrivacyPillar() {
               Hyperia operates entirely offline. We do not have servers. We do not have a database of your protocols. We cannot see, share, or sell your information. Period.
             </p>
           </div>
+
+          {/* Backup Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center mt-16"
+          >
+            <div className="relative border-gray-900 border-[10px] md:border-[12px] rounded-[2.5rem] h-[550px] w-[260px] md:h-[600px] md:w-[280px] shadow-[0_0_40px_rgba(255,51,102,0.15)] overflow-hidden bg-black">
+              <div className="absolute top-0 inset-x-0 h-6 bg-black z-20 rounded-b-3xl w-32 mx-auto"></div>
+              <img src="/screenshots/mockup_3.jpg" alt="Hyperia Backup & Restore View" className="w-full h-full object-cover relative z-10" />
+            </div>
+          </motion.div>
+
         </motion.div>
       </div>
     </section>
